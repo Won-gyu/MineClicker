@@ -7,9 +7,9 @@ namespace Mine
     public class Space : MonoBehaviour
     {
         public int id;
-        public Space spaceLeft;
-        public Space spaceRight;
-        public Space spaceTop;
-        public Space spaceBottom;
+        public List<Space> spacesLeft;
+        public List<Space> spacesRight;
+        public List<Space> spacesTop;
+        public List<Space> spacesBottom;
     }
 }

@@ -8,25 +8,25 @@ namespace Mine
 {
     public class SpaceManager : MonoSingleton<SpaceManager>
     {
-        public Space[] spaces;
+        public Space[] totalSpaces;
         public int[][] costMap;
 
         private int SpaceCount
         {
             get
             {
-                return spaces.Length;
+                return totalSpaces.Length;
             }
         }
 
         private void Awake()
         {
-            spaces = GetComponentsInChildren<Space>();
+            totalSpaces = GetComponentsInChildren<Space>();
             costMap = new int[SpaceCount][];
             for (int id = 0; id < SpaceCount; id++)
             {
                 costMap[id] = new int[SpaceCount];
-                spaces[id].id = id;
+                totalSpaces[id].id = id;
             }
 
             FindPathesAll();
@@ -101,26 +101,22 @@ namespace Mine
                 }
 
                 // check bound spaces
-                if (spaces[fromId].spaceLeft != null)
-                {
-                    int toId = spaces[fromId].spaceLeft.id;
-                    costMap[fromId][toId] = DijkstraUtils.COST;
-                }
-                if (spaces[fromId].spaceRight != null)
-                {
-                    int toId = spaces[fromId].spaceRight.id;
-                    costMap[fromId][toId] = DijkstraUtils.COST;
-                }
-                if (spaces[fromId].spaceTop != null)
-                {
-                    int toId = spaces[fromId].spaceTop.id;
-                    costMap[fromId][toId] = DijkstraUtils.COST;
-                }
-                if (spaces[fromId].spaceBottom != null)
-                {
-                    int toId = spaces[fromId].spaceBottom.id;
-                    costMap[fromId][toId] = DijkstraUtils.COST;
-                }
+                InitCosts(fromId, totalSpaces[fromId].spacesLeft);
+                InitCosts(fromId, totalSpaces[fromId].spacesRight);
+                InitCosts(fromId, totalSpaces[fromId].spacesTop);
+                InitCosts(fromId, totalSpaces[fromId].spacesBottom);
+            }
+        }
+
+        private void InitCosts(int fromId, List<Space> spaces)
+        {
+            if (spaces == null)
+                return;
+
+            for (int i = 0; i < spaces.Count; i++)
+            {
+                int toId = spaces[i].id;
+                costMap[fromId][toId] = DijkstraUtils.COST;
             }
         }
     }

@@ -7,7 +7,23 @@ namespace Mine
     public class Floor : Space
     {
         [SerializeField]
-        private Transform Spawner;
+        private Transform spawner;
+        public Vector2 PositionSpawner
+        {
+            get
+            {
+                return spawner.position;
+            }
+        }
+        [SerializeField]
+        private Transform goal;
+        public Vector2 PositionGoal
+        {
+            get
+            {
+                return goal.position;
+            }
+        }
         [SerializeField]
         private GameObject mineralArea;
 

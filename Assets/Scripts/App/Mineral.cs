@@ -4,18 +4,24 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Mineral : MonoBehaviour
+    public class Mineral : GameObject2D
     {
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField]
+        private float widthDigable;
+        public float WidthDigable
         {
-            
+            get
+            {
+                return widthDigable;
+            }
         }
 
-        // Update is called once per frame
-        void Update()
+        void OnDrawGizmosSelected()
         {
-            
+            Gizmos.color = Color.blue;
+            Vector2 left = transform.position - new Vector3(widthDigable, 0f);
+            Vector2 right = transform.position + new Vector3(widthDigable, 0f);
+            Gizmos.DrawLine(left, right);
         }
     }
 }

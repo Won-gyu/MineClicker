@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7098926302482557720}
   - component: {fileID: 5368955483185287255}
+  - component: {fileID: 2646166243254591573}
   m_Layer: 0
   m_Name: Surface
   m_TagString: Untagged
@@ -44,6 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ce31cfdd26b70419cf7d57476d3f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2646166243254591573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872422536576616886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342e816d753b9c4478f408845c17fa92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  spaceLeft: {fileID: 0}
+  spaceRight: {fileID: 0}
+  spaceTop: {fileID: 0}
+  spaceBottom: {fileID: 0}
 --- !u!1001 &1259615186020464214
 PrefabInstance:
   m_ObjectHideFlags: 0

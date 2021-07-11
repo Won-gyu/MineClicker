@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Surface : Space
+    // [RequireComponent(typeof(Space))]
+    public class Surface : GameObject2D
     {
         
     }

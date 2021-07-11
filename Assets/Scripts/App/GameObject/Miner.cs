@@ -18,6 +18,7 @@ namespace Mine
         public MinerState state;
         public Vector2 direction;
         public float speed;
+        public float delayDig;
 
         private Vector2 Speed
         {
@@ -72,7 +73,7 @@ namespace Mine
 
         private IEnumerator CoroutineDig()
         {
-            yield return new WaitForSecondsRealtime(5f);
+            yield return new WaitForSecondsRealtime(delayDig);
             ChangeState(MinerState.Deliver);
         }
 

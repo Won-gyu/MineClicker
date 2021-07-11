@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Space : GameObject2D
+    public class Space : MonoBehaviour
     {
         public int id;
         public Space spaceLeft;

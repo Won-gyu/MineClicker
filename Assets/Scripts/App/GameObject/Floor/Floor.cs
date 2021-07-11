@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Floor : Space
+    // [RequireComponent(typeof(Space))]
+    public class Floor : GameObject2D
     {
         [SerializeField]
         private Transform spawner;

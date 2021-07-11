@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1758293955217764730}
   - component: {fileID: 6223370662371412637}
+  - component: {fileID: 1639965751927220309}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -91,13 +92,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930230c86c53e544eb08785f63422d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceLeft: {fileID: 0}
-  psaceRight: {fileID: 0}
-  psaceTop: {fileID: 0}
-  psaceBottom: {fileID: 0}
   spawner: {fileID: 2320366342761430109}
   goal: {fileID: 5977029232448275217}
   mineralArea: {fileID: 6241831307795652974}
+--- !u!114 &1639965751927220309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143553967253777575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342e816d753b9c4478f408845c17fa92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  spaceLeft: {fileID: 0}
+  spaceRight: {fileID: 0}
+  spaceTop: {fileID: 0}
+  spaceBottom: {fileID: 0}
 --- !u!1 &6241831307795652974
 GameObject:
   m_ObjectHideFlags: 0

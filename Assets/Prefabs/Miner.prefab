@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bb7bf9d5084ae4c889cdd2577756b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floor: {fileID: 0}
+  mineral: {fileID: 0}
+  state: 0
+  speed: {x: 0, y: 0}
 --- !u!1 &1636922158176950064
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d03302f5d8249db479732c01e7f1a2df, type: 3}
   m_Color: {r: 1, g: 0.9742207, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

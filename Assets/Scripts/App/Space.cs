@@ -6,9 +6,10 @@ namespace Mine
 {
     public class Space : GameObject2D
     {
+        public int id;
         public Space spaceLeft;
-        public Space psaceRight;
-        public Space psaceTop;
-        public Space psaceBottom;
+        public Space spaceRight;
+        public Space spaceTop;
+        public Space spaceBottom;
     }
 }

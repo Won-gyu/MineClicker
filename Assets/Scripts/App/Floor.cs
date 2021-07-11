@@ -16,28 +16,18 @@ namespace Mine
             }
         }
         [SerializeField]
-        private Transform goal;
-        public Vector2 PositionGoal
+        private GoalOnFloor goal;
+        public GoalOnFloor Goal
         {
             get
             {
-                return goal.position;
+                return goal;
             }
         }
         [SerializeField]
         private GameObject mineralArea;
 
         private Mineral[] minerals;
-
-        [SerializeField]
-        private float widthDigable;
-        public float WidthDigable
-        {
-            get
-            {
-                return widthDigable;
-            }
-        }
 
         private void Awake()
         {
@@ -47,17 +37,6 @@ namespace Mine
         public Mineral GetRandomMineral()
         {
             return minerals[Random.Range(0, minerals.Length)];
-        }
-
-        void OnDrawGizmosSelected()
-        {
-            if (goal != null)
-            {
-                Gizmos.color = Color.red;
-                Vector2 left = goal.position - new Vector3(widthDigable, 0f);
-                Vector2 right = goal.position + new Vector3(widthDigable, 0f);
-                Gizmos.DrawLine(left, right);
-            }
         }
     }
 }

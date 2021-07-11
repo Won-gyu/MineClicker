@@ -4,29 +4,16 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Mineral : GameObject2D
+    public class Mineral : MonoBehaviour
     {
         [SerializeField]
-        private float widthDigable;
-        public float WidthDigable
+        private GoalOnFloor goalOnFloor;
+        public GoalOnFloor GoalOnFloor
         {
             get
             {
-                return widthDigable;
+                return goalOnFloor;
             }
-        }
-
-        // public Vector2 GetRandomPositionGoal()
-        // {
-        //     return Position + new Vector2(Random.Range());
-        // }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.blue;
-            Vector2 left = transform.position - new Vector3(widthDigable, 0f);
-            Vector2 right = transform.position + new Vector3(widthDigable, 0f);
-            Gizmos.DrawLine(left, right);
         }
     }
 }

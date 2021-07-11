@@ -23,11 +23,12 @@ namespace Mine
         {
             get
             {
-                return direction * speed;
+                return direction * speed  * Time.deltaTime;
             }
         }
 
-        private Vector2 positionGoal;
+        public GoalOnFloor goal;
+        public Vector2 positionGoal;
         private Coroutine coroutineState;
 
         private void Start()
@@ -60,12 +61,7 @@ namespace Mine
         private IEnumerator CoroutineFindingMineral()
         {
             mineral = floor.GetRandomMineral();
-            direction = GetDirection(mineral) * Time.fixedDeltaTime;
-            while (GetDistanceX(mineral.Position).magnitude > mineral.WidthDigable)
-            {
-                Position += Speed;
-                yield return null;
-            }
+            yield return StartCoroutine(CoroutineWalkTo(mineral.GoalOnFloor));
             ChangeState(MinerState.Dig);
         }
 
@@ -77,13 +73,20 @@ namespace Mine
 
         private IEnumerator CoroutineDeliver()
         {
-            direction = GetDirection(floor.PositionGoal) * Time.fixedDeltaTime;
-            while (GetDistanceX(floor.PositionGoal).magnitude > floor.WidthDigable)
+            yield return StartCoroutine(CoroutineWalkTo(floor.Goal));
+            ChangeState(MinerState.FindMineral);
+        }
+
+        private IEnumerator CoroutineWalkTo(GoalOnFloor goal)
+        {
+            this.goal = goal;
+            positionGoal = goal.GetRandomPositionGoal();
+            direction = GetDirection(positionGoal);
+            while (GetDistanceX(positionGoal).magnitude > 0.1f)
             {
                 Position += Speed;
                 yield return null;
             }
-            ChangeState(MinerState.FindMineral);
         }
     }
 }

@@ -47,7 +47,10 @@ MonoBehaviour:
   floor: {fileID: 0}
   mineral: {fileID: 0}
   state: 0
-  speed: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
+  speed: 5
+  goal: {fileID: 0}
+  positionGoal: {x: 0, y: 0}
 --- !u!1 &1636922158176950064
 GameObject:
   m_ObjectHideFlags: 0

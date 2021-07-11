@@ -49,10 +49,10 @@ namespace Mine
 
         private IEnumerator CoroutineFindingMineral()
         {
-            speed = GetDistanceX(mineral.Position).normalized * Time.deltaTime;
+            speed = -GetDistanceX(mineral.Position).normalized * Time.deltaTime;
             while (GetDistanceX(mineral.Position).magnitude > mineral.WidthDigable)
             {
-                Debug.Log(Vector2.Distance(mineral.Position, Position));
+                Debug.Log(GetDistanceX(mineral.Position).magnitude);
                 Position += speed;
                 yield return null;
             }
@@ -67,8 +67,8 @@ namespace Mine
 
         private IEnumerator CoroutineDeliver()
         {
-            speed = GetDistanceX(floor.Position).normalized;
-            while (GetDistanceX(floor.PositionGoal).magnitude > 1f)
+            speed = -GetDistanceX(floor.PositionGoal).normalized * Time.deltaTime;
+            while (GetDistanceX(floor.PositionGoal).magnitude > floor.WidthDigable)
             {
                 Position += speed;
                 yield return null;

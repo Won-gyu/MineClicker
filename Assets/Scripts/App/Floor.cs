@@ -29,6 +29,27 @@ namespace Mine
 
         private Mineral[] minerals;
 
+        [SerializeField]
+        private float widthDigable;
+        public float WidthDigable
+        {
+            get
+            {
+                return widthDigable;
+            }
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            if (goal != null)
+            {
+                Gizmos.color = Color.red;
+                Vector2 left = goal.position - new Vector3(widthDigable, 0f);
+                Vector2 right = goal.position + new Vector3(widthDigable, 0f);
+                Gizmos.DrawLine(left, right);
+            }
+        }
+
         private void Awake()
         {
             minerals = mineralArea.GetComponentsInChildren<Mineral>();

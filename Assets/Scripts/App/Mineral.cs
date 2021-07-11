@@ -16,7 +16,12 @@ namespace Mine
             }
         }
 
-        void OnDrawGizmosSelected()
+        // public Vector2 GetRandomPositionGoal()
+        // {
+        //     return Position + new Vector2(Random.Range());
+        // }
+
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
             Vector2 left = transform.position - new Vector3(widthDigable, 0f);

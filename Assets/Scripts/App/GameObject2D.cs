@@ -22,5 +22,23 @@ namespace Mine
         {
             return new Vector2(transform.position.x - position.x, 0f);
         }
+
+        public Vector2 GetDirection(GameObject2D target)
+        {
+            return GetDirection(target.Position);
+        }
+
+        public Vector2 GetDirection(Vector2 target)
+        {
+            if (target.x >= Position.x)
+            {
+                return new Vector2(1f, 0f);
+            }
+            else if (target.x < Position.x)
+            {
+                return new Vector2(-1f, 0f);
+            }
+            return Vector2.zero;
+        }
     }
 }

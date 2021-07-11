@@ -27,9 +27,10 @@ namespace Mine
             }
         }
 
+        private Vector2 positionGoal;
         private Coroutine coroutineState;
 
-        private void Awake()
+        private void Start()
         {
             ChangeState(MinerState.FindMineral);
         }
@@ -58,7 +59,8 @@ namespace Mine
 
         private IEnumerator CoroutineFindingMineral()
         {
-            direction = -GetDistanceX(mineral.Position).normalized * Time.fixedDeltaTime;
+            mineral = floor.GetRandomMineral();
+            direction = GetDirection(mineral) * Time.fixedDeltaTime;
             while (GetDistanceX(mineral.Position).magnitude > mineral.WidthDigable)
             {
                 Position += Speed;
@@ -75,7 +77,7 @@ namespace Mine
 
         private IEnumerator CoroutineDeliver()
         {
-            direction = -GetDistanceX(floor.PositionGoal).normalized * Time.fixedDeltaTime;
+            direction = GetDirection(floor.PositionGoal) * Time.fixedDeltaTime;
             while (GetDistanceX(floor.PositionGoal).magnitude > floor.WidthDigable)
             {
                 Position += Speed;

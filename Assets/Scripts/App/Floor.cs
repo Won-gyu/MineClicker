@@ -39,6 +39,16 @@ namespace Mine
             }
         }
 
+        private void Awake()
+        {
+            minerals = mineralArea.GetComponentsInChildren<Mineral>();
+        }
+
+        public Mineral GetRandomMineral()
+        {
+            return minerals[Random.Range(0, minerals.Length)];
+        }
+
         void OnDrawGizmosSelected()
         {
             if (goal != null)
@@ -48,11 +58,6 @@ namespace Mine
                 Vector2 right = goal.position + new Vector3(widthDigable, 0f);
                 Gizmos.DrawLine(left, right);
             }
-        }
-
-        private void Awake()
-        {
-            minerals = mineralArea.GetComponentsInChildren<Mineral>();
         }
     }
 }

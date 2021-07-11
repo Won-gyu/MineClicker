@@ -36,6 +36,11 @@ namespace Mine
             ChangeState(MinerState.FindMineral);
         }
 
+        public void Init(Floor floor)
+        {
+            this.floor = floor;
+        }
+
         private void ChangeState(MinerState state)
         {
             this.state = state;

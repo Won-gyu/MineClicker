@@ -10,12 +10,13 @@ namespace Mine
         [SerializeField]
         private GameObject prefabMiner;
 
-        public void CreateMiner(Transform spawner)
+        public void CreateMiner(Floor floor)
         {
             var go = Instantiate(prefabMiner) as GameObject;
             go.name = prefabMiner.name;
             go.transform.SetParent(transform, false);
-            go.transform.position = spawner.position;
+            go.transform.position = floor.PositionSpawner;
+            go.GetComponent<Miner>().Init(floor);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Mine
@@ -37,6 +38,12 @@ namespace Mine
         public Mineral GetRandomMineral()
         {
             return minerals[Random.Range(0, minerals.Length)];
+        }
+        
+        [Button]
+        public void CreateMiner()
+        {
+            MinerManager.Instance.CreateMiner(this);
         }
     }
 }

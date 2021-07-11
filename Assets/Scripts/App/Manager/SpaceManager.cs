@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Helper;
 using Sirenix.OdinInspector;
+using System;
 
 namespace Mine
 {
     public class SpaceManager : MonoSingleton<SpaceManager>
     {
         public Space[] totalSpaces;
+        public Floor[] totalFloors;
         public int[][] costMap;
 
         private int SpaceCount
@@ -21,6 +23,17 @@ namespace Mine
 
         private void Awake()
         {
+            FindPathesAll();
+
+            totalFloors = GetComponents<Floor>();
+            Array.Sort(totalFloors, (a, b) =>
+            {
+                return 1;
+            });
+        }
+
+        private void FindPathesAll()
+        {
             totalSpaces = GetComponentsInChildren<Space>();
             costMap = new int[SpaceCount][];
             for (int id = 0; id < SpaceCount; id++)
@@ -29,11 +42,6 @@ namespace Mine
                 totalSpaces[id].id = id;
             }
 
-            FindPathesAll();
-        }
-
-        private void FindPathesAll()
-        {
             // init
             InitCosts();
 

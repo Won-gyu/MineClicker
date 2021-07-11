@@ -4,9 +4,16 @@ using UnityEngine;
 
 namespace Mine
 {
-    // [RequireComponent(typeof(Space))]
     public class Surface : GameObject2D
     {
-        
+        [SerializeField]
+        private Transform dropOff;
+        public Vector2 PositionDropOff
+        {
+            get
+            {
+                return dropOff.position;
+            }
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Mine
     public class Miner : GameObject2D
     {
         public Floor floor;
+        public Elevator elevator;
         public Mineral mineral;
         public MinerState state;
         public Vector2 direction;
@@ -53,36 +54,40 @@ namespace Mine
             switch (state)
             {
                 case MinerState.FindMineral:
-                    coroutineState = StartCoroutine(CoroutineFindingMineral());
+                    coroutineState = StartCoroutine(StateCoroutineFindingMineral());
                     break;
                 case MinerState.Dig:
-                    coroutineState = StartCoroutine(CoroutineDig());
+                    coroutineState = StartCoroutine(StateCoroutineDig());
                     break;
                 case MinerState.Deliver:
-                    coroutineState = StartCoroutine(CoroutineDeliver());
+                    coroutineState = StartCoroutine(StateCoroutineDeliver());
                     break;
             }
         }
 
-        private IEnumerator CoroutineFindingMineral()
+        // State
+        private IEnumerator StateCoroutineFindingMineral()
         {
             mineral = floor.GetRandomMineral();
             yield return StartCoroutine(CoroutineWalkTo(mineral.GoalOnFloor));
             ChangeState(MinerState.Dig);
         }
 
-        private IEnumerator CoroutineDig()
+        private IEnumerator StateCoroutineDig()
         {
             yield return new WaitForSecondsRealtime(delayDig);
             ChangeState(MinerState.Deliver);
         }
 
-        private IEnumerator CoroutineDeliver()
+        private IEnumerator StateCoroutineDeliver()
         {
-            yield return StartCoroutine(CoroutineWalkTo(floor.Goal));
+            yield return StartCoroutine(CoroutineWalkTo(floor.GoalElevator));
+            yield return StartCoroutine(CoroutineWaitForElevator());
             ChangeState(MinerState.FindMineral);
         }
 
+
+        // Action
         private IEnumerator CoroutineWalkTo(GoalOnFloor goal)
         {
             this.goal = goal;
@@ -92,6 +97,14 @@ namespace Mine
             {
                 Position += Speed;
                 yield return null;
+            }
+        }
+
+        private IEnumerator CoroutineWaitForElevator()
+        {
+            while (true)
+            {
+
             }
         }
     }

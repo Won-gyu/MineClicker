@@ -5,9 +5,17 @@ using UnityEngine;
 
 namespace Mine
 {
-    // [RequireComponent(typeof(Space))]
     public class Floor : GameObject2D
     {
+        [SerializeField]
+        private int floor;
+        public int floor
+        {
+            get
+            {
+                return floor;
+            }
+        }
         [SerializeField]
         private Transform spawner;
         public Vector2 PositionSpawner
@@ -18,12 +26,12 @@ namespace Mine
             }
         }
         [SerializeField]
-        private GoalOnFloor goal;
-        public GoalOnFloor Goal
+        private GoalOnFloor goalElevator;
+        public GoalOnFloor GoalElevator
         {
             get
             {
-                return goal;
+                return goalElevator;
             }
         }
         [SerializeField]

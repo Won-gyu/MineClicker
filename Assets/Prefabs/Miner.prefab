@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Face 03
       objectReference: {fileID: 0}
+    - target: {fileID: 6212509296605464983, guid: 9236d2a9dc03bab469e6893f205f6814, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6236605524369254757, guid: 9236d2a9dc03bab469e6893f205f6814, type: 3}
       propertyPath: m_Sprite
       value: 

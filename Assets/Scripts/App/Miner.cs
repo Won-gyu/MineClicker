@@ -16,7 +16,16 @@ namespace Mine
         public Floor floor;
         public Mineral mineral;
         public MinerState state;
-        public Vector2 speed;
+        public Vector2 direction;
+        public float speed;
+
+        private Vector2 Speed
+        {
+            get
+            {
+                return direction * speed;
+            }
+        }
 
         private Coroutine coroutineState;
 
@@ -49,11 +58,10 @@ namespace Mine
 
         private IEnumerator CoroutineFindingMineral()
         {
-            speed = -GetDistanceX(mineral.Position).normalized * Time.deltaTime;
+            direction = -GetDistanceX(mineral.Position).normalized * Time.fixedDeltaTime;
             while (GetDistanceX(mineral.Position).magnitude > mineral.WidthDigable)
             {
-                Debug.Log(GetDistanceX(mineral.Position).magnitude);
-                Position += speed;
+                Position += Speed;
                 yield return null;
             }
             ChangeState(MinerState.Dig);
@@ -67,10 +75,10 @@ namespace Mine
 
         private IEnumerator CoroutineDeliver()
         {
-            speed = -GetDistanceX(floor.PositionGoal).normalized * Time.deltaTime;
+            direction = -GetDistanceX(floor.PositionGoal).normalized * Time.fixedDeltaTime;
             while (GetDistanceX(floor.PositionGoal).magnitude > floor.WidthDigable)
             {
-                Position += speed;
+                Position += Speed;
                 yield return null;
             }
             ChangeState(MinerState.FindMineral);

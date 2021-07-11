@@ -316,6 +316,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1972283238721765202}
     - target: {fileID: 7627786304612902143, guid: 95c1bdb5b0b9b7642aaccc7703177487, type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627786304612902143, guid: 95c1bdb5b0b9b7642aaccc7703177487, type: 3}
       propertyPath: mineral
       value: 
       objectReference: {fileID: 1972283238721765203}
@@ -382,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6223370662371412637, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
       propertyPath: widthDigable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6703639309102963550, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
       propertyPath: m_RootOrder

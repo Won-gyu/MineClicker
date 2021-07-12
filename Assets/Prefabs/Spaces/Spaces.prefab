@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3981860065060125221}
   - component: {fileID: 7672633961918226087}
+  - component: {fileID: 378532162170824361}
   m_Layer: 0
   m_Name: Spaces
   m_TagString: Untagged
@@ -50,6 +51,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalSpaces: []
   totalFloors: []
+--- !u!114 &378532162170824361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981860065060125220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f1ff3d8b33a414398a8915e49f6af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathFinder: {fileID: 7672633961918226087}
 --- !u!1001 &2754344760149472664
 PrefabInstance:
   m_ObjectHideFlags: 0

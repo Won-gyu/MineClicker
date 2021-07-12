@@ -35,14 +35,14 @@ namespace Mine
 
         private void FindPathesAll()
         {
-            totalPathes = new List<int>[SpaceCount][];
             totalSpaces = GetComponentsInChildren<Space>();
+            totalPathes = new List<int>[SpaceCount][];
             costMap = new int[SpaceCount][];
             for (int id = 0; id < SpaceCount; id++)
             {
+                totalSpaces[id].id = id;
                 totalPathes[id] = new List<int>[SpaceCount];
                 costMap[id] = new int[SpaceCount];
-                totalSpaces[id].id = id;
             }
 
             // init

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4960137008453716892}
   - component: {fileID: 7544435399443050101}
   m_Layer: 0
-  m_Name: OBJ_Dwarf_Hand_Main
+  m_Name: Hand Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1636922157632302954}
   - component: {fileID: 7627786304612902143}
+  - component: {fileID: 4385893166057834502}
   m_Layer: 0
   m_Name: Miner
   m_TagString: Untagged
@@ -135,6 +136,25 @@ MonoBehaviour:
   delayDig: 2
   goal: {fileID: 0}
   positionGoal: {x: 0, y: 0}
+--- !u!95 &4385893166057834502
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636922157632302953}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8431e3dca55d58a45aed2b19844591b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1699958529063612535
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +399,7 @@ GameObject:
   - component: {fileID: 5103567256095670329}
   - component: {fileID: 2214886987077874974}
   m_Layer: 0
-  m_Name: OBJ_Dwarf_Hand_Off
+  m_Name: Hand Off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +581,7 @@ GameObject:
   - component: {fileID: 6998423403895592465}
   - component: {fileID: 8494678477118708656}
   m_Layer: 0
-  m_Name: OBJ_Dwarf_Hand_Hold
+  m_Name: Hand Hold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,6 +13,7 @@ namespace Mine
 
     public class Miner : GameObject2D
     {
+        public Floor floor;
         public Basement basement;
         public Elevator elevator;
         public Mineral mineral;
@@ -41,9 +42,10 @@ namespace Mine
             ChangeState(MinerState.FindMineral);
         }
 
-        public void Init(Basement basement)
+        public void Init(Floor floor)
         {
-            this.basement = basement;
+            this.floor = floor;
+            this.basement = floor as Basement;
         }
 
         private void ChangeState(MinerState state)
@@ -85,7 +87,7 @@ namespace Mine
         private IEnumerator StateCoroutineDeliver()
         {
             yield return StartCoroutine(CoroutineWalkTo(basement.GoalElevator));
-            yield return StartCoroutine(CoroutineWaitForElevator());
+            yield return StartCoroutine(CoroutineMoveToFloor(0));
             ChangeState(MinerState.FindMineral);
         }
 
@@ -103,12 +105,31 @@ namespace Mine
             }
         }
 
-        private IEnumerator CoroutineWaitForElevator()
+        private IEnumerator CoroutineWaitForElevator(int spaceIdElevator, int floorLevel)
         {
-            while (/*elevator.currentFloor*/false)
+            elevator = SpaceManager.Instance.GetSpace(spaceIdElevator).GetComponent<Elevator>();
+            elevator.AddMinerWaiting(this, floorLevel);
+            while (elevator != null)
             {
                 yield return null;
             }
+        }
+
+        public void OnArriveAtGoalFloor()
+        {
+            elevator = null;
+        }
+
+        private IEnumerator CoroutineMoveToFloor(int floorLevel)
+        {
+            pathController.SetPathes(SpaceManager.Instance.GetPathClone(
+                SpaceManager.Instance.GetSpaceIdFromFloorLevel(floor.FloorLevel),
+                SpaceManager.Instance.GetSpaceIdFromFloorLevel(floorLevel)));
+            yield return StartCoroutine(CoroutineWalkTo(floor.GoalElevator));
+
+            int spaceIdElevator = pathController.PopPath();
+            int spaceIdGoal = pathController.PopPath();
+            yield return StartCoroutine(CoroutineWaitForElevator(spaceIdElevator, spaceIdGoal));
         }
     }
 }

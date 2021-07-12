@@ -17,15 +17,6 @@ namespace Mine
             }
         }
         [SerializeField]
-        private GoalOnFloor goalElevator;
-        public GoalOnFloor GoalElevator
-        {
-            get
-            {
-                return goalElevator;
-            }
-        }
-        [SerializeField]
         private GameObject mineralArea;
 
         private Mineral[] minerals;

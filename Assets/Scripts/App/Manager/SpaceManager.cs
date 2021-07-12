@@ -32,5 +32,15 @@ namespace Mine
         {
             return new List<int>(pathFinder.totalPathes[fromId][toId]);
         }
+
+        public Space GetSpace(int spaceId)
+        {
+            return totalSpaces[spaceId];
+        }
+
+        public int GetSpaceIdFromFloorLevel(int floorLevel)
+        {
+            return totalFloors[floorLevel].GetComponent<Space>().id;
+        }
     }
 }

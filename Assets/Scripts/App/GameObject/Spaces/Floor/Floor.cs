@@ -16,5 +16,14 @@ namespace Mine
                 return floorLevel;
             }
         }
+        [SerializeField]
+        private GoalOnFloor goalElevator;
+        public GoalOnFloor GoalElevator
+        {
+            get
+            {
+                return goalElevator;
+            }
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace Mine
 
         public int PopPath()
         {
-            pathes.Reverse();
             int path = pathes[pathes.Count - 1];
             pathes.RemoveAt(pathes.Count - 1);
             return path;
@@ -19,6 +18,8 @@ namespace Mine
         public void SetPathes(List<int> pathes)
         {
             this.pathes = new List<int>(pathes);
+            pathes.Reverse();
+            Debug.Log(pathes.Count);
         }
     }
 }

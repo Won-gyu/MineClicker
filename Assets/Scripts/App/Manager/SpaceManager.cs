@@ -10,7 +10,8 @@ namespace Mine
     {
         [SerializeField]
         private  Space[] totalSpaces;
-        public Floor[] totalFloors;
+        [SerializeField]
+        private Floor[] totalFloors;
         public Surface surface;
         [SerializeField]
         private PathFinder pathFinder;
@@ -36,6 +37,11 @@ namespace Mine
         public Space GetSpace(int spaceId)
         {
             return totalSpaces[spaceId];
+        }
+
+        public Floor GetFloor(int floorLevel)
+        {
+            return totalFloors[floorLevel];
         }
 
         public int GetSpaceIdFromFloorLevel(int floorLevel)

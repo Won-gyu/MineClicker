@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6703639309102963550}
   - component: {fileID: 5977029232448275217}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: Goal Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorLevel: 0
-  spawner: {fileID: 0}
-  goalElevator: {fileID: 0}
-  mineralArea: {fileID: 0}
+  spawner: {fileID: 2320366342761430109}
+  goalElevator: {fileID: 5977029232448275217}
+  mineralArea: {fileID: 6241831307795652974}
 --- !u!1 &6241831307795652974
 GameObject:
   m_ObjectHideFlags: 0

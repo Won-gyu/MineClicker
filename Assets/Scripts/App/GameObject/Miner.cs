@@ -21,6 +21,9 @@ namespace Mine
         public float speed;
         public float delayDig;
 
+        [SerializeField]
+        private PathController pathController;
+
         private Vector2 Speed
         {
             get
@@ -102,9 +105,9 @@ namespace Mine
 
         private IEnumerator CoroutineWaitForElevator()
         {
-            while (true)
+            while (/*elevator.currentFloor*/false)
             {
-
+                yield return null;
             }
         }
     }

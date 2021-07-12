@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Helper;
 using Sirenix.OdinInspector;
-using System;
 
 namespace Mine
 {
     public class PathFinder : MonoBehaviour
     {
         public Space[] totalSpaces;
-        public Floor[] totalFloors;
         public int[][] costMap;
         public List<int>[][] totalPathes;
 
@@ -22,20 +20,14 @@ namespace Mine
             }
         }
 
-        private void Awake()
+        public void Init(Space[] spaces)
         {
+            totalSpaces = spaces;
             FindPathesAll();
-
-            totalFloors = GetComponents<Floor>();
-            Array.Sort(totalFloors, (a, b) =>
-            {
-                return a.FloorLevel - b.FloorLevel;
-            });
         }
 
         private void FindPathesAll()
         {
-            totalSpaces = GetComponentsInChildren<Space>();
             totalPathes = new List<int>[SpaceCount][];
             costMap = new int[SpaceCount][];
             for (int id = 0; id < SpaceCount; id++)

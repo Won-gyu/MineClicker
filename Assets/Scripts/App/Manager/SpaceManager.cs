@@ -2,21 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Helper;
+using System;
 
 namespace Mine
 {
     public class SpaceManager : MonoSingleton<SpaceManager>
     {
         [SerializeField]
+        private  Space[] totalSpaces;
+        public Floor[] totalFloors;
+        public Surface surface;
+        [SerializeField]
         private PathFinder pathFinder;
 
-        // public void CreateMiner(Basement basement)
-        // {
-        //     var go = Instantiate(prefabMiner) as GameObject;
-        //     go.name = prefabMiner.name;
-        //     go.transform.SetParent(transform, false);
-        //     go.transform.position = basement.PositionSpawner;
-        //     go.GetComponent<Miner>().Init(basement);
-        // }
+        private void Awake()
+        {
+            totalSpaces = GetComponentsInChildren<Space>();
+            totalFloors = GetComponentsInChildren<Floor>();
+            Array.Sort(totalFloors, (a, b) =>
+            {
+                return a.FloorLevel - b.FloorLevel;
+            });
+            surface = GetComponentInChildren<Surface>();
+
+            pathFinder.Init(totalSpaces);
+        }
+
+        public List<int> GetPathClone(int fromId, int toId)
+        {
+            return new List<int>(pathFinder.totalPathes[fromId][toId]);
+        }
     }
 }

@@ -18,17 +18,22 @@ namespace Mine
             }
         }
 
-        public Vector2 GetDistanceX(Vector2 position)
+        public float GetDistanceX(Vector2 position)
         {
-            return new Vector2(transform.position.x - position.x, 0f);
+            return Mathf.Abs(transform.position.x - position.x);
         }
 
-        public Vector2 GetDirection(GameObject2D target)
+        public float GetDistanceY(Vector2 position)
         {
-            return GetDirection(target.Position);
+            return Mathf.Abs(transform.position.y - position.y);
         }
 
-        public Vector2 GetDirection(Vector2 target)
+        public Vector2 GetDirectionX(GameObject2D target)
+        {
+            return GetDirectionX(target.Position);
+        }
+
+        public Vector2 GetDirectionX(Vector2 target)
         {
             if (target.x >= Position.x)
             {
@@ -37,6 +42,19 @@ namespace Mine
             else if (target.x < Position.x)
             {
                 return new Vector2(-1f, 0f);
+            }
+            return Vector2.zero;
+        }
+
+        public Vector2 GetDirectionY(Vector2 target)
+        {
+            if (target.y >= Position.y)
+            {
+                return new Vector2(0f, 1f);
+            }
+            else if (target.y < Position.y)
+            {
+                return new Vector2(0f, -1f);
             }
             return Vector2.zero;
         }

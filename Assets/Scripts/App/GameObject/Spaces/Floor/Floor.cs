@@ -17,7 +17,7 @@ namespace Mine
             }
         }
         [SerializeField]
-        private GoalOnFloor goalElevator;
+        protected GoalOnFloor goalElevator;
         public GoalOnFloor GoalElevator
         {
             get

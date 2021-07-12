@@ -24,6 +24,7 @@ namespace Mine
         private void Awake()
         {
             minerals = mineralArea.GetComponentsInChildren<Mineral>();
+            goalElevator.Position = new Vector2(goalElevator.Position.x, spawner.position.y);
         }
 
         public Mineral GetRandomMineral()

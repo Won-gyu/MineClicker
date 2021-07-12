@@ -15,7 +15,7 @@ namespace Mine
     {
         public Floor floor;
         public Basement basement;
-        public Elevator elevator;
+        public ElevatorArea elevator;
         public Mineral mineral;
         public MinerState state;
         public Vector2 direction;
@@ -97,8 +97,8 @@ namespace Mine
         {
             this.goal = goal;
             positionGoal = goal.GetRandomPositionGoal();
-            direction = GetDirection(positionGoal);
-            while (GetDistanceX(positionGoal).magnitude > 0.1f)
+            direction = GetDirectionX(positionGoal);
+            while (GetDistanceX(positionGoal) > 0.1f)
             {
                 Position += Speed;
                 yield return null;
@@ -107,7 +107,7 @@ namespace Mine
 
         private IEnumerator CoroutineWaitForElevator(int spaceIdElevator, int floorLevel)
         {
-            elevator = SpaceManager.Instance.GetSpace(spaceIdElevator).GetComponent<Elevator>();
+            elevator = SpaceManager.Instance.GetSpace(spaceIdElevator).GetComponent<ElevatorArea>();
             elevator.AddMinerWaiting(this, floorLevel);
             while (elevator != null)
             {

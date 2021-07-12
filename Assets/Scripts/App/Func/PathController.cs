@@ -18,8 +18,7 @@ namespace Mine
         public void SetPathes(List<int> pathes)
         {
             this.pathes = new List<int>(pathes);
-            pathes.Reverse();
-            Debug.Log(pathes.Count);
+            this.pathes.Reverse();
         }
     }
 }

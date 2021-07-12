@@ -13,8 +13,8 @@ namespace Mine
 
     public class Miner : GameObject2D
     {
-        public Floor floorWorkPlace;
-        public Basement basement;
+        public Floor currentFloor;
+        public Basement basementWorkPlace;
         public ElevatorArea elevator;
         public Mineral mineral;
         public MinerState state;
@@ -44,8 +44,8 @@ namespace Mine
 
         public void Init(Floor floorWorkPlace)
         {
-            this.floorWorkPlace = floorWorkPlace;
-            this.basement = floor as Basement;
+            this.currentFloor = floorWorkPlace;
+            this.basementWorkPlace = floorWorkPlace as Basement;
         }
 
         private void ChangeState(MinerState state)
@@ -73,7 +73,7 @@ namespace Mine
         // State
         private IEnumerator StateCoroutineFindingMineral()
         {
-            mineral = basement.GetRandomMineral();
+            mineral = basementWorkPlace.GetRandomMineral();
             yield return StartCoroutine(CoroutineWalkTo(mineral.GoalOnFloor));
             ChangeState(MinerState.Dig);
         }
@@ -86,7 +86,7 @@ namespace Mine
 
         private IEnumerator StateCoroutineDeliver()
         {
-            yield return StartCoroutine(CoroutineWalkTo(basement.GoalElevator));
+            yield return StartCoroutine(CoroutineWalkTo(basementWorkPlace.GoalElevator));
             yield return StartCoroutine(CoroutineMoveToFloor(0));
             ChangeState(MinerState.FindMineral);
         }
@@ -113,6 +113,7 @@ namespace Mine
             {
                 yield return null;
             }
+            // finish coroutine when arriving on goal floor
         }
 
         public void OnArriveAtGoalFloor()
@@ -123,14 +124,16 @@ namespace Mine
         private IEnumerator CoroutineMoveToFloor(int floorLevel)
         {
             pathController.SetPathes(SpaceManager.Instance.GetPathClone(
-                SpaceManager.Instance.GetSpaceIdFromFloorLevel(floorWorkPlace.FloorLevel),
+                SpaceManager.Instance.GetSpaceIdFromFloorLevel(currentFloor.FloorLevel),
                 SpaceManager.Instance.GetSpaceIdFromFloorLevel(floorLevel)));
-            yield return StartCoroutine(CoroutineWalkTo(floorWorkPlace.GoalElevator));
+            yield return StartCoroutine(CoroutineWalkTo(currentFloor.GoalElevator));
 
             int spaceIdElevator = pathController.PopPath();
             int spaceIdGoal = pathController.PopPath();
             int floorLevelGoal = SpaceManager.Instance.GetSpace(spaceIdGoal).GetComponent<Floor>().FloorLevel;
-            yield return StartCoroutine(CoroutineWaitForElevator(spaceIdElevator, floorWorkPlace.FloorLevel, floorLevelGoal));
+            yield return StartCoroutine(CoroutineWaitForElevator(spaceIdElevator, currentFloor.FloorLevel, floorLevelGoal));
+
+            currentFloor = SpaceManager.Instance.GetFloor(floorLevelGoal);
         }
     }
 }

@@ -266,10 +266,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1567735850}
     - target: {fileID: 1942158170839509608, guid: 98caa2a0403a5b94b9478f84924b677b, type: 3}
-      propertyPath: spacesTop.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1942158170839509608, guid: 98caa2a0403a5b94b9478f84924b677b, type: 3}
       propertyPath: spacesTop.Array.data[0]
       value: 
       objectReference: {fileID: 1895501612}
@@ -405,8 +401,7 @@ PrefabInstance:
       propertyPath: floorLevel
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3981860065060125222, guid: 98caa2a0403a5b94b9478f84924b677b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98caa2a0403a5b94b9478f84924b677b, type: 3}
 --- !u!114 &1217273350 stripped
 MonoBehaviour:

@@ -108,7 +108,7 @@ namespace Mine
         private IEnumerator CoroutineWaitForElevator(int spaceIdElevator, int floorLevel)
         {
             elevator = SpaceManager.Instance.GetSpace(spaceIdElevator).GetComponent<ElevatorArea>();
-            elevator.AddMinerWaiting(this, floorLevel);
+            elevator.AddMinerWaiting(this, floor.FloorLevel);
             while (elevator != null)
             {
                 yield return null;

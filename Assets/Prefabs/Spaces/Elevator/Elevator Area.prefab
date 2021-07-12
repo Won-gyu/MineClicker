@@ -244,7 +244,7 @@ MonoBehaviour:
   entrances: []
   entranceFloorLevels: 
   direction: {x: 0, y: 0}
-  speed: 0
+  speed: 1
   debug: 0
 --- !u!1 &5970395910936739452
 GameObject:

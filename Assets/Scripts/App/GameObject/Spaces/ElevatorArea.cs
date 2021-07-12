@@ -9,9 +9,9 @@ namespace Mine
     {
         public int currentFloor = -1;
         // [floorLevelWaiting]
-        public List<List<Miner>> minersWaiting;
+        public Dictionary<int, List<Miner>> minersWaiting;
         // [floorLevelGoal]
-        public List<List<Miner>> minersOn;
+        public Dictionary<int, List<Miner>> minersOn;
         [SerializeField]
         private GameObject2D objectElevator;
         [BoxGroup("entrance")]
@@ -36,8 +36,8 @@ namespace Mine
 
         private void Awake()
         {
-            minersWaiting = new List<List<Miner>>();
-            minersOn = new List<List<Miner>>();
+            minersWaiting = new Dictionary<int, List<Miner>>();
+            minersOn = new Dictionary<int, List<Miner>>();
             entrancesDict = new Dictionary<int, GameObject2D>();
         }
 
@@ -47,31 +47,33 @@ namespace Mine
             {
                 entrancesDict.Add(entranceFloorLevels[i], entrances[i]);
                 entrances[i].Position = new Vector2(entrances[i].Position.x, SpaceManager.Instance.totalFloors[i].GoalElevator.Position.y);
+                minersWaiting.Add(entranceFloorLevels[i], new List<Miner>());
+                minersOn.Add(entranceFloorLevels[i], new List<Miner>());
             }
 
             currentFloor = entranceFloorLevels[0];
             objectElevator.Position = entrances[0].Position;
-            Debug.Log("@@@ " + objectElevator.Position.y + " " + entrances[0].Position.y);
         }
 
         public void AddMinerWaiting(Miner miner, int floorLevelWaiting)
         {
-            while (minersWaiting.Count < floorLevelWaiting + 1)
+            List<Miner> miners;
+            if (!minersWaiting.TryGetValue(floorLevelWaiting, out miners))
             {
-                minersWaiting.Add(new List<Miner>());
+                Debug.LogError("something went wrong");
             }
-
-            minersWaiting[floorLevelWaiting].Add(miner);
+            miners.Add(miner);
+            Debug.Log("Miner wait for the elevator on " + floorLevelWaiting);
         }
 
-        public void AddMinerOn(Miner miner, int floorLevelGoal)
+        private void AddMinerOn(Miner miner, int floorLevelGoal)
         {
-            while (minersOn.Count < floorLevelGoal + 1)
+            List<Miner> miners;
+            if (!minersOn.TryGetValue(floorLevelGoal, out miners))
             {
-                minersOn.Add(new List<Miner>());
+                Debug.LogError("something went wrong");
             }
-
-            minersOn[floorLevelGoal].Add(miner);
+            miners.Add(miner);
         }
 
         public void ArriveOnFloor(int floor)
@@ -79,12 +81,14 @@ namespace Mine
             for (int i = 0; i < minersOn[floor].Count; i++)
             {
                 minersOn[floor][i].OnArriveAtGoalFloor();
+                Debug.Log("Miner get off the elevator on " + floor);
             }
             minersOn[floor].Clear();
 
             for (int i = 0; i < minersWaiting[floor].Count; i++)
             {
-                minersOn[floor].Add(minersWaiting[floor][i]);
+                AddMinerOn(minersWaiting[floor][i], floor);
+                Debug.Log("Miner get on the elevator on " + floor);
             }
             minersWaiting[floor].Clear();
         }
@@ -92,15 +96,14 @@ namespace Mine
         // Action
         private IEnumerator CoroutineMoveTo(int floorLevel)
         {
-            GameObject2D goal = entrancesDict[floorLevel - 1];
-            Debug.Log("@@@1 target:" + goal.Position.y + " from:" + objectElevator.Position.y);
+            GameObject2D goal = entrancesDict[floorLevel];
             direction = objectElevator.GetDirectionY(goal.Position);
-            Debug.Log("@@@2 :" + direction.y);
             while (objectElevator.GetDistanceY(goal.Position) > 0.1f)
             {
                 objectElevator.Position += Speed;
                 yield return null;
             }
+            ArriveOnFloor(floorLevel);
         }
 
         [Button]

@@ -13,7 +13,7 @@ namespace Mine
 
     public class Miner : GameObject2D
     {
-        public Floor floor;
+        public Basement basement;
         public Elevator elevator;
         public Mineral mineral;
         public MinerState state;
@@ -38,9 +38,9 @@ namespace Mine
             ChangeState(MinerState.FindMineral);
         }
 
-        public void Init(Floor floor)
+        public void Init(Basement basement)
         {
-            this.floor = floor;
+            this.basement = basement;
         }
 
         private void ChangeState(MinerState state)
@@ -68,7 +68,7 @@ namespace Mine
         // State
         private IEnumerator StateCoroutineFindingMineral()
         {
-            mineral = floor.GetRandomMineral();
+            mineral = basement.GetRandomMineral();
             yield return StartCoroutine(CoroutineWalkTo(mineral.GoalOnFloor));
             ChangeState(MinerState.Dig);
         }
@@ -81,7 +81,7 @@ namespace Mine
 
         private IEnumerator StateCoroutineDeliver()
         {
-            yield return StartCoroutine(CoroutineWalkTo(floor.GoalElevator));
+            yield return StartCoroutine(CoroutineWalkTo(basement.GoalElevator));
             yield return StartCoroutine(CoroutineWaitForElevator());
             ChangeState(MinerState.FindMineral);
         }

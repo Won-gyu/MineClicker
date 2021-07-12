@@ -28,7 +28,7 @@ namespace Mine
             totalFloors = GetComponents<Floor>();
             Array.Sort(totalFloors, (a, b) =>
             {
-                return 1;
+                return a.FloorLevel - b.FloorLevel;
             });
         }
 

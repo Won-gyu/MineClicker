@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Surface : GameObject2D
+    public class Surface : Floor
     {
         [SerializeField]
         private Transform dropOff;

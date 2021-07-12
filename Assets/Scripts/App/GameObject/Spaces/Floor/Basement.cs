@@ -5,17 +5,8 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Floor : GameObject2D
+    public class Basement : Floor
     {
-        [SerializeField]
-        private int floor;
-        public int floor
-        {
-            get
-            {
-                return floor;
-            }
-        }
         [SerializeField]
         private Transform spawner;
         public Vector2 PositionSpawner

@@ -53,8 +53,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1758293955217764730}
-  - component: {fileID: 6223370662371412637}
   - component: {fileID: 1639965751927220309}
+  - component: {fileID: 5165249489527549570}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -80,21 +80,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6223370662371412637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6143553967253777575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930230c86c53e544eb08785f63422d4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawner: {fileID: 2320366342761430109}
-  goal: {fileID: 5977029232448275217}
-  mineralArea: {fileID: 6241831307795652974}
 --- !u!114 &1639965751927220309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,10 +93,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  spaceLeft: {fileID: 0}
-  spaceRight: {fileID: 0}
-  spaceTop: {fileID: 0}
-  spaceBottom: {fileID: 0}
+  spacesLeft: []
+  spacesRight: []
+  spacesTop: []
+  spacesBottom: []
+--- !u!114 &5165249489527549570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143553967253777575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbea9b6ef648d7148b4c694eefc30b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLevel: 0
+  spawner: {fileID: 0}
+  goalElevator: {fileID: 0}
+  mineralArea: {fileID: 0}
 --- !u!1 &6241831307795652974
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ namespace Mine
 
         [SerializeField]
         private Animator animator;
+        [SerializeField]
+        private MinerBody body;
         public Floor currentFloor;
         public Basement basementWorkPlace;
         public ElevatorArea elevator;
@@ -43,6 +45,7 @@ namespace Mine
 
         private void Start()
         {
+            body.SetRandomCostume();
             ChangeActionState(MinerActionState.FindMineral);
         }
 

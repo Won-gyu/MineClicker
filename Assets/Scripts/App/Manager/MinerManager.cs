@@ -9,6 +9,15 @@ namespace Mine
     {
         [SerializeField]
         private GameObject prefabMiner;
+        [SerializeField]
+        private MinerDataSO minerData;
+        public MinerDataSO MinerData
+        {
+            get
+            {
+                return minerData;
+            }
+        }
 
         public void CreateMiner(Basement basement)
         {

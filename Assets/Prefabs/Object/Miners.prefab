@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabMiner: {fileID: 1636922157632302953, guid: 95c1bdb5b0b9b7642aaccc7703177487, type: 3}
+  minerData: {fileID: 11400000, guid: 35ee210a7754a1040a2b0e7e957a0bb7, type: 2}

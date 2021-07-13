@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1636922157632302954}
   - component: {fileID: 7627786304612902143}
+  - component: {fileID: 6379126346472995086}
   - component: {fileID: 4385893166057834502}
   - component: {fileID: 7716126950924994778}
   m_Layer: 0
@@ -131,15 +132,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   animator: {fileID: 4385893166057834502}
+  body: {fileID: 6379126346472995086}
   currentFloor: {fileID: 0}
   basementWorkPlace: {fileID: 0}
   elevator: {fileID: 0}
   mineral: {fileID: 0}
-  state: 0
+  actionState: 0
+  bodyState: 0
   delayDig: 2
   pathController: {fileID: 7716126950924994778}
   goal: {fileID: 0}
   positionGoal: {x: 0, y: 0}
+--- !u!114 &6379126346472995086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636922157632302953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a29eee0ae135c34fb7a78908a6b3726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceArea: {fileID: 5693245656562408261}
+  headArea: {fileID: 8808070565302762945}
+  spriteSkins:
+  - {fileID: 5556481221136418228}
+  - {fileID: 8494678477118708656}
+  - {fileID: 2214886987077874974}
+  - {fileID: 7544435399443050101}
 --- !u!95 &4385893166057834502
 Animator:
   serializedVersion: 3

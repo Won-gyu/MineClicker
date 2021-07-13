@@ -11,40 +11,18 @@ namespace Mine
         Deliver
     }
 
-    public class Miner : GameObject2D
+    public class Miner : MovableObject
     {
         public Floor currentFloor;
         public Basement basementWorkPlace;
         public ElevatorArea elevator;
         public Mineral mineral;
         public MinerState state;
-        private Vector2 direction;
-        private Vector2 Direction
-        {
-            set
-            {
-                direction = value;
-                transform.localScale =  new Vector3(-direction.x, transform.localScale.y, transform.localScale.z);
-            }
-            get
-            {
-                return direction;
-            }
-        }
-        public float speed;
         public float delayDig;
         public Sprite sprite;
 
         [SerializeField]
         private PathController pathController;
-
-        private Vector2 Speed
-        {
-            get
-            {
-                return Direction * speed  * Time.deltaTime;
-            }
-        }
 
         public GoalOnFloor goal;
         public Vector2 positionGoal;

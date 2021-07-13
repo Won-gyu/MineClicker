@@ -129,14 +129,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bb7bf9d5084ae4c889cdd2577756b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floor: {fileID: 0}
-  basement: {fileID: 0}
+  currentFloor: {fileID: 0}
+  basementWorkPlace: {fileID: 0}
   elevator: {fileID: 0}
   mineral: {fileID: 0}
   state: 0
   direction: {x: 0, y: 0}
   speed: 5
   delayDig: 2
+  sprite: {fileID: 0}
   pathController: {fileID: 7716126950924994778}
   goal: {fileID: 0}
   positionGoal: {x: 0, y: 0}

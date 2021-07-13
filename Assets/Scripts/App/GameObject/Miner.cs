@@ -18,9 +18,22 @@ namespace Mine
         public ElevatorArea elevator;
         public Mineral mineral;
         public MinerState state;
-        public Vector2 direction;
+        private Vector2 direction;
+        private Vector2 Direction
+        {
+            set
+            {
+                direction = value;
+                transform.localScale =  new Vector3(-direction.x, transform.localScale.y, transform.localScale.z);
+            }
+            get
+            {
+                return direction;
+            }
+        }
         public float speed;
         public float delayDig;
+        public Sprite sprite;
 
         [SerializeField]
         private PathController pathController;
@@ -29,7 +42,7 @@ namespace Mine
         {
             get
             {
-                return direction * speed  * Time.deltaTime;
+                return Direction * speed  * Time.deltaTime;
             }
         }
 
@@ -101,8 +114,8 @@ namespace Mine
         {
             this.goal = goal;
             positionGoal = goal.GetRandomPositionGoal();
-            direction = GetDirectionX(positionGoal);
-            while (GetDistanceX(positionGoal) > 0.1f)
+            Direction = GetDirectionX(positionGoal);
+            while (GetDistanceX(positionGoal) > Speed.magnitude)
             {
                 Position += Speed;
                 yield return null;

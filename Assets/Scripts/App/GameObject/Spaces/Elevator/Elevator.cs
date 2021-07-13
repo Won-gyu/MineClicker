@@ -41,23 +41,44 @@ namespace Mine
             {
                 minersOn.Add(elevatorArea.EntranceFloorLevels[i], new List<Miner>());
             }
+            StartCoroutine(UpdateCoroutine());
+        }
+
+        private IEnumerator UpdateCoroutine()
+        {
+            while (true)
+            {
+                for (int i = 0; i < elevatorArea.EntranceFloorLevels.Count; i++)
+                {
+                    yield return StartCoroutine(CoroutineMoveTo(elevatorArea.EntranceFloorLevels[i]));
+                    yield return new WaitForSeconds(0.2f);
+                }
+                for (int i = elevatorArea.EntranceFloorLevels.Count - 1; i >= 0; i--)
+                {
+                    yield return StartCoroutine(CoroutineMoveTo(elevatorArea.EntranceFloorLevels[i]));
+                    yield return new WaitForSeconds(0.2f);
+                }
+            }
         }
         
         // Action
         private IEnumerator CoroutineMoveTo(int floorLevel)
         {
+            ArriveOnFloor(currentFloor);
             GameObject2D goal = elevatorArea.GetEntrance(floorLevel);
             direction = GetDirectionY(goal.Position);
-            while (GetDistanceY(goal.Position) > 0.1f)
+            while (GetDistanceY(goal.Position) > Speed.magnitude)
             {
                 Position += Speed;
                 yield return null;
             }
+            Position = goal.Position;
             ArriveOnFloor(floorLevel);
         }
 
         public void ArriveOnFloor(int floor)
         {
+            currentFloor = floor;
             for (int i = 0; i < minersOn[floor].Count; i++)
             {
                 GetOff(minersOn[floor][i]);

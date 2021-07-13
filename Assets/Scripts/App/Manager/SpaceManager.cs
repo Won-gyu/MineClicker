@@ -12,7 +12,14 @@ namespace Mine
         private  Space[] totalSpaces;
         [SerializeField]
         private Floor[] totalFloors;
-        public Surface surface;
+        private Surface surface;
+        public Surface Surface
+        {
+            get
+            {
+                return surface;
+            }
+        }
         [SerializeField]
         private PathFinder pathFinder;
 

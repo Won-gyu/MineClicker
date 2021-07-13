@@ -7,12 +7,12 @@ namespace Mine
     public class Surface : Floor
     {
         [SerializeField]
-        private Transform dropOff;
-        public Vector2 PositionDropOff
+        private GoalOnFloor dropOff;
+        public GoalOnFloor DropOff
         {
             get
             {
-                return dropOff.position;
+                return dropOff;
             }
         }
     }

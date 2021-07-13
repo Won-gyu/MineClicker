@@ -87,7 +87,11 @@ namespace Mine
         private IEnumerator StateCoroutineDeliver()
         {
             yield return StartCoroutine(CoroutineWalkTo(basementWorkPlace.GoalElevator));
-            yield return StartCoroutine(CoroutineMoveToFloor(0));
+            yield return StartCoroutine(CoroutineMoveToFloor(SpaceManager.Instance.Surface.FloorLevel));
+            yield return StartCoroutine(CoroutineWalkTo(SpaceManager.Instance.Surface.DropOff));
+            yield return StartCoroutine(CoroutineWalkTo(SpaceManager.Instance.Surface.GoalElevator));
+            yield return StartCoroutine(CoroutineMoveToFloor(basementWorkPlace.FloorLevel));
+
             ChangeState(MinerState.FindMineral);
         }
 

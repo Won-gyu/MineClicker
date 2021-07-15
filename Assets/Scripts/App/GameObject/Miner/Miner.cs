@@ -43,6 +43,11 @@ namespace Mine
         private Coroutine coroutineActionState;
         private bool carry;
 
+        private void Awake()
+        {
+            flipX = true;
+        }
+
         private void Start()
         {
             body.SetRandomCostume();

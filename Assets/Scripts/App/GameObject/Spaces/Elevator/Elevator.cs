@@ -5,18 +5,32 @@ using Sirenix.OdinInspector;
 
 namespace Mine
 {
-    public class Elevator : GameObject2D
+    public enum ElevatorState
     {
+        Idle,
+        Up,
+        Down
+    }
+    public class Elevator : MovableObject
+    {
+        public const string ANI_PARAM_STATE = "State";
+
         [SerializeField]
         private Transform minerArea;
-
-        public Vector2 direction;
-        public float speed;
-        private Vector2 Speed
+        [SerializeField]
+        private Animator animator;
+        protected override Vector2 Direction
         {
-            get
+            set
             {
-                return direction * speed  * Time.deltaTime;
+                base.Direction = value;
+
+                if (Direction.y > 0)
+                    animator.SetInteger(ANI_PARAM_STATE, (int)ElevatorState.Up);
+                else if (Direction.y < 0)
+                    animator.SetInteger(ANI_PARAM_STATE, (int)ElevatorState.Down);
+                else
+                    animator.SetInteger(ANI_PARAM_STATE, (int)ElevatorState.Idle);
             }
         }
 
@@ -51,11 +65,13 @@ namespace Mine
                 for (int i = 0; i < elevatorArea.EntranceFloorLevels.Count; i++)
                 {
                     yield return StartCoroutine(CoroutineMoveTo(elevatorArea.EntranceFloorLevels[i]));
+                    Direction = Vector2.zero;
                     yield return new WaitForSeconds(0.2f);
                 }
                 for (int i = elevatorArea.EntranceFloorLevels.Count - 1; i >= 0; i--)
                 {
                     yield return StartCoroutine(CoroutineMoveTo(elevatorArea.EntranceFloorLevels[i]));
+                    Direction = Vector2.zero;
                     yield return new WaitForSeconds(0.2f);
                 }
             }
@@ -66,7 +82,7 @@ namespace Mine
         {
             ArriveOnFloor(currentFloor);
             GameObject2D goal = elevatorArea.GetEntrance(floorLevel);
-            direction = GetDirectionY(goal.Position);
+            Direction = GetDirectionY(goal.Position);
             while (GetDistanceY(goal.Position) > Speed.magnitude)
             {
                 Position += Speed;

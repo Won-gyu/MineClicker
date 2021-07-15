@@ -344,9 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14018301fabd33643bb4a04260bd302e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minerArea: {fileID: 8810964187350635273}
-  direction: {x: 0, y: 0}
   speed: 5
+  minerArea: {fileID: 8810964187350635273}
+  animator: {fileID: 7205269988335997227}
   currentFloor: -1
   debug: 0
 --- !u!1 &7302823109761805962

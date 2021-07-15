@@ -7,12 +7,13 @@ namespace Mine
     public class MovableObject : GameObject2D
     {
         private Vector2 direction;
-        protected Vector2 Direction
+        protected virtual Vector2 Direction
         {
             set
             {
                 direction = value;
-                transform.localScale =  new Vector3(-direction.x, transform.localScale.y, transform.localScale.z);
+                if (flipX)
+                    transform.localScale =  new Vector3(-direction.x, transform.localScale.y, transform.localScale.z);
             }
             get
             {
@@ -28,5 +29,7 @@ namespace Mine
                 return Direction * speed  * Time.deltaTime;
             }
         }
+
+        protected bool flipX;
     }
 }

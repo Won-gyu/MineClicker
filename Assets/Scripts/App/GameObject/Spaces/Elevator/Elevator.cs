@@ -78,10 +78,12 @@ namespace Mine
         }
         
         // Action
-        private IEnumerator CoroutineMoveTo(int floorLevel)
+        private IEnumerator CoroutineMoveTo(int floorLevelGoal)
         {
-            ArriveOnFloor(currentFloor);
-            GameObject2D goal = elevatorArea.GetEntrance(floorLevel);
+            // Debug.Log("@@@ currentFloor: " + currentFloor + " floorLevelGoal: " + floorLevelGoal);
+            bool isElevatorGoingUp = floorLevelGoal < currentFloor;
+            ArriveOnFloor(currentFloor, isElevatorGoingUp);
+            GameObject2D goal = elevatorArea.GetEntrance(floorLevelGoal);
             Direction = GetDirectionY(goal.Position);
             while (GetDistanceY(goal.Position) > Speed.magnitude)
             {
@@ -89,10 +91,10 @@ namespace Mine
                 yield return null;
             }
             Position = goal.Position;
-            ArriveOnFloor(floorLevel);
+            ArriveOnFloor(floorLevelGoal, isElevatorGoingUp);
         }
 
-        public void ArriveOnFloor(int floor)
+        public void ArriveOnFloor(int floor, bool isElevatorGoingUp)
         {
             currentFloor = floor;
             for (int i = 0; i < minersOn[floor].Count; i++)
@@ -102,12 +104,22 @@ namespace Mine
             }
             minersOn[floor].Clear();
 
-            for (int i = 0; i < elevatorArea.GetWaitInfos(floor).Count; i++)
+            for (int i = 0; i < elevatorArea.GetWaitInfos(floor).Count;)
             {
-                GetOn(elevatorArea.GetWaitInfos(floor)[i]);
+                bool isMinerGoingUp = elevatorArea.GetWaitInfos(floor)[i].goal < floor;
+                Debug.Log("@@@ isElevatorGoingUp: " + isElevatorGoingUp + " isMinerGoingUp: " + isMinerGoingUp);
+                if (isMinerGoingUp == isElevatorGoingUp)
+                {
+                    GetOn(elevatorArea.GetWaitInfos(floor)[i]);
+                    elevatorArea.GetWaitInfos(floor).RemoveAt(i);
+                }
+                else
+                {
+                    i++;
+                }
                 // Debug.Log("Miner get on the elevator on " + floor);
             }
-            elevatorArea.GetWaitInfos(floor).Clear();
+            // elevatorArea.GetWaitInfos(floor).Clear();
         }
 
         private void GetOn(ElevatorWaitInfo waitInfo)

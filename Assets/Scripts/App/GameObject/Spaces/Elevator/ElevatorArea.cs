@@ -74,7 +74,7 @@ namespace Mine
                 minerWaiting = miner,
                 goal = floorLevelGoal
             });
-            Debug.Log("Miner wait for the elevator on " + floorLevelWaiting);
+            // Debug.Log("Miner wait for the elevator on " + floorLevelWaiting);
         }
     }
 }

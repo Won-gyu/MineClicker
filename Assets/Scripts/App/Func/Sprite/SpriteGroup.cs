@@ -12,7 +12,6 @@ namespace Mine
         public void Apply()
         {
             SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-            Debug.Log("@@@ " + name);
             for (int i = 0; i < spriteRenderers.Length; i++)
             {
                 // Debug.Log("###1 - " + spriteRenderers[i].name + ": "  + spriteRenderers[i].sortingOrder + " + " + additionalOrder);

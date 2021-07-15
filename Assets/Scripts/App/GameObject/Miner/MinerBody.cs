@@ -32,6 +32,7 @@ namespace Mine
             {
                 spriteSkins[i].color = color;
             }
+            GetComponent<SpriteGroup>().Apply();
         }
         
 

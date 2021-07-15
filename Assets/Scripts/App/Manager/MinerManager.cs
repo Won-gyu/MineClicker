@@ -19,6 +19,8 @@ namespace Mine
             }
         }
 
+        private int createdMinerId;
+
         public void CreateMiner(Basement basement)
         {
             var go = Instantiate(prefabMiner) as GameObject;
@@ -26,6 +28,8 @@ namespace Mine
             go.transform.SetParent(transform, false);
             go.transform.position = basement.PositionSpawner;
             go.GetComponent<Miner>().Init(basement);
+            go.GetComponent<SpriteGroup>().SetAdditionalOrder(createdMinerId * 30);
+            createdMinerId++;
         }
     }
 }

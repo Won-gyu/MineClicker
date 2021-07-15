@@ -82,14 +82,14 @@ namespace Mine
             for (int i = 0; i < minersOn[floor].Count; i++)
             {
                 GetOff(minersOn[floor][i]);
-                Debug.Log("Miner get off the elevator on " + floor);
+                // Debug.Log("Miner get off the elevator on " + floor);
             }
             minersOn[floor].Clear();
 
             for (int i = 0; i < elevatorArea.GetWaitInfos(floor).Count; i++)
             {
                 GetOn(elevatorArea.GetWaitInfos(floor)[i]);
-                Debug.Log("Miner get on the elevator on " + floor);
+                // Debug.Log("Miner get on the elevator on " + floor);
             }
             elevatorArea.GetWaitInfos(floor).Clear();
         }

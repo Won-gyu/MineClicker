@@ -15,5 +15,12 @@ namespace Mine
                 return goalOnFloor;
             }
         }
+        
+        [SerializeField]
+        private List<int> oreIds;
+        public int GetRandomOreId()
+        {
+            return oreIds[Random.Range(0, oreIds.Count)];
+        }
     }
 }

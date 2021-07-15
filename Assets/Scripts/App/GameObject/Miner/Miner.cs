@@ -37,6 +37,8 @@ namespace Mine
 
         [SerializeField]
         private PathController pathController;
+        [SerializeField]
+        private OreHolder oreHolder;
 
         public GoalOnFloor goal;
         public Vector2 positionGoal;
@@ -116,17 +118,20 @@ namespace Mine
             yield return StartCoroutine(CoroutineWalkTo(SpaceManager.Instance.Surface.GoalElevator));
             yield return StartCoroutine(CoroutineMoveToFloor(basementWorkPlace.FloorLevel));
 
+            mineral = null;
             ChangeActionState(MinerActionState.FindMineral);
         }
 
         private void StartCarry()
         {
             carry = true;
+            oreHolder.HoldOre(mineral.GetRandomOreId());
         }
 
         private void EndCarry()
         {
             carry = false;
+            oreHolder.ReturnOre();
         }
 
 

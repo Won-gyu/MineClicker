@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3469695571822276811}
   m_Layer: 0
-  m_Name: Ores
+  m_Name: Ores legacy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

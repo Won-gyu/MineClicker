@@ -107,7 +107,6 @@ namespace Mine
             for (int i = 0; i < elevatorArea.GetWaitInfos(floor).Count;)
             {
                 bool isMinerGoingUp = elevatorArea.GetWaitInfos(floor)[i].goal < floor;
-                Debug.Log("@@@ isElevatorGoingUp: " + isElevatorGoingUp + " isMinerGoingUp: " + isMinerGoingUp);
                 if (isMinerGoingUp == isElevatorGoingUp)
                 {
                     GetOn(elevatorArea.GetWaitInfos(floor)[i]);

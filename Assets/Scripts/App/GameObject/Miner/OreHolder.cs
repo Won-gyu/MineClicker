@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Helper;
 
 namespace Mine
 {
@@ -14,6 +15,7 @@ namespace Mine
             {
                 ore.ReturnToPool();
                 ore = null;
+                MessageDispatcher.Dispatch("Game_ExecStoreOre");
             }
         }
 
@@ -23,7 +25,6 @@ namespace Mine
             {
                 ore = OrePools.Instance.GetPoolObject(oreId);
                 ore.transform.SetParent(transform, false);
-                // ore.transform.localPosition = Vector2.zero;
             }
         }
     }

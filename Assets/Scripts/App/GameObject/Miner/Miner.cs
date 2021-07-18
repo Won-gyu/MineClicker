@@ -172,7 +172,6 @@ namespace Mine
             pathController.SetPathes(SpaceManager.Instance.GetPathClone(
                 SpaceManager.Instance.GetSpaceIdFromFloorLevel(currentFloor.FloorLevel),
                 SpaceManager.Instance.GetSpaceIdFromFloorLevel(floorLevel)));
-            yield return StartCoroutine(CoroutineWalkTo(currentFloor.GoalElevator));
 
             int spaceIdElevator = pathController.PopPath();
             int spaceIdGoal = pathController.PopPath();

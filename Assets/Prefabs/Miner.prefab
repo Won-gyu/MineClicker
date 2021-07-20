@@ -140,7 +140,7 @@ MonoBehaviour:
   mineral: {fileID: 0}
   actionState: 0
   bodyState: 0
-  delayDig: 2
+  delayDig: 4
   pathController: {fileID: 7716126950924994778}
   oreHolder: {fileID: 3112197773585156102}
   goal: {fileID: 0}

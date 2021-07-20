@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde764d5e1345604caab628ce7688603, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  googleSpreadSheetId: 1Y6ngRniqVdEo0q4_rwVupLR5FYmX4JlbGZ4BlD33RHY
+  rootDirectory: {fileID: 102900000, guid: 3b8e72d43fc061d47b7634f03224cbf6, type: 3}
+  parser: {fileID: 0}
+  progress: 0
+  spreadSheets:
+  - tableName: FloorAccomodationData
+    queryType: 3
+    parent: {fileID: 11400000}

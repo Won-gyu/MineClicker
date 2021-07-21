@@ -17,6 +17,6 @@ MonoBehaviour:
   parser: {fileID: 0}
   progress: 0
   spreadSheets:
-  - tableName: FloorLevelData
+  - tableName: FloorTierData
     queryType: 3
     parent: {fileID: 11400000}

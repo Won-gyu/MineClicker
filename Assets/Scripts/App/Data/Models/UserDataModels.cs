@@ -21,12 +21,21 @@ namespace Mine
                 floorData.Add(new FloorData());
             }
         }
+
+        public void PolishData()
+        {
+            for (int i = 0; i < floorData.Count; i++)
+            {
+                if (floorData[i].tier < 1)
+                    floorData[i].tier = 1;
+            }
+        }
         public int oreStored;
         public List<FloorData> floorData;
     }
 
     public class FloorData
     {
-        public int accommodationLevel;
+        public int tier;
     }
 }

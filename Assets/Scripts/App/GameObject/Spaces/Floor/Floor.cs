@@ -25,5 +25,21 @@ namespace Mine
                 return goalElevator;
             }
         }
+
+        public FloorData FloorData
+        {
+            get
+            {
+                return UserDataManager.Instance.UserData.floorData[FloorLevel];
+            }
+        }
+
+        public SpreadSheetFloorTierDataInfo FloorTierData
+        {
+            get
+            {
+                return StaticDataManager.Instance.GetFloorTierData(FloorData.tier);
+            }
+        }
     }
 }

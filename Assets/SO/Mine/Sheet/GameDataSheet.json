@@ -1,2 +1,2 @@
-{"FloorLevelData":[{"level":1,"limitCount":5},{"level":2,"limitCount":10},{"level":3,"limitCount":15},{"level":4,"limitCount":20},{"level":5,"limitCount":25},{"level":6,"limitCount":30}]
+{"FloorTierData":[{"tier":1,"limitCount":5,"requiredCredit":100},{"tier":2,"limitCount":10,"requiredCredit":200},{"tier":3,"limitCount":15,"requiredCredit":300},{"tier":4,"limitCount":20,"requiredCredit":400},{"tier":5,"limitCount":25,"requiredCredit":500}]
 }

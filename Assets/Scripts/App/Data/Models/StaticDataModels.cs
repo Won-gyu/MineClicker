@@ -10,9 +10,10 @@ namespace Mine
     }
     
     [Serializable]
-    public class SpreadSheetFloorLevelDataInfo
+    public class SpreadSheetFloorTierDataInfo
     {
-        public int level;
+        public int tier;
         public int limitCount;
+        public double requiredCredit;
     }
 }

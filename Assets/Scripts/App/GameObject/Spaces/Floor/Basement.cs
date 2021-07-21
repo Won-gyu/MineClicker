@@ -20,6 +20,7 @@ namespace Mine
         private GameObject mineralArea;
 
         private Mineral[] minerals;
+        private int countMiner;
 
         private void Awake()
         {
@@ -35,7 +36,11 @@ namespace Mine
         [Button]
         public void CreateMiner()
         {
-            MinerManager.Instance.CreateMiner(this);
+            if (countMiner < FloorTierData.limitCount)
+            {
+                MinerManager.Instance.CreateMiner(this);
+                countMiner++;
+            }
         }
     }
 }

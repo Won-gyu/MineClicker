@@ -162,6 +162,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2881391102420737649, guid: 9cededaca5eecfc4bbdc24e06aa2b34b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 18.166904
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881391102420737649, guid: 9cededaca5eecfc4bbdc24e06aa2b34b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.24
+      objectReference: {fileID: 0}
     - target: {fileID: 6808082899209899857, guid: 9cededaca5eecfc4bbdc24e06aa2b34b, type: 3}
       propertyPath: m_Name
       value: Floor Env Base 1

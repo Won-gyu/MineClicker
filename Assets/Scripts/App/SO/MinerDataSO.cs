@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 namespace Mine
 {
 #if UNITY_5_3_OR_NEWER
-    [CreateAssetMenu(fileName = "MinerDataSO", menuName = "App/ScriptableObject/MinerData", order = 0)]
+    [CreateAssetMenu(fileName = "MinerDataSO", menuName = "Mine/ScriptableObject/MinerData", order = 0)]
 #endif
     public class MinerDataSO : ScriptableObject
     {

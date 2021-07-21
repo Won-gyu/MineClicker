@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fde764d5e1345604caab628ce7688603, type: 3}
-  m_Name: GameData
+  m_Name: GameDataSheet
   m_EditorClassIdentifier: 
   googleSpreadSheetId: 1Y6ngRniqVdEo0q4_rwVupLR5FYmX4JlbGZ4BlD33RHY
-  rootDirectory: {fileID: 102900000, guid: 3b8e72d43fc061d47b7634f03224cbf6, type: 3}
+  rootDirectory: {fileID: 102900000, guid: d6b6bb18db11ce842b477347391b6a4f, type: 3}
   parser: {fileID: 0}
   progress: 0
   spreadSheets:
-  - tableName: FloorAccomodationData
+  - tableName: FloorLevelData
     queryType: 3
     parent: {fileID: 11400000}

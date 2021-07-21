@@ -8,4 +8,11 @@ namespace Mine
         public const int MAX_FLOOR = 10;
         public const int FLOOR_MINER_LIMIT_COUNT = 10;
     }
+    
+    [Serializable]
+    public class SpreadSheetFloorLevelDataInfo
+    {
+        public int level;
+        public int limitCount;
+    }
 }

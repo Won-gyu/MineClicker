@@ -98,5 +98,16 @@ namespace Helper
                 if (ExistFile(paths[i])) return true;
             return false;
         }
+        
+        public static T FromJson<T>(string path)
+        {
+            var json = "{}";
+            if (FileUtils.ExistFile(path))
+            {
+                json = FileUtils.ReadText(path);
+            }
+
+            return JsonUtility.FromJson<T>(json);
+        }
     }
 }

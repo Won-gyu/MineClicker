@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using TMPro;
 
 namespace Mine
 {
@@ -18,6 +19,9 @@ namespace Mine
         }
         [SerializeField]
         private GameObject mineralArea;
+        [Header("UI")]
+        [SerializeField]
+        private TextMeshPro textLimitMiner;
 
         private Mineral[] minerals;
         private int countMiner;
@@ -26,6 +30,7 @@ namespace Mine
         {
             minerals = mineralArea.GetComponentsInChildren<Mineral>();
             goalElevator.Position = new Vector2(goalElevator.Position.x, spawner.position.y);
+            UpdateUI();
         }
 
         public Mineral GetRandomMineral()
@@ -40,7 +45,13 @@ namespace Mine
             {
                 MinerManager.Instance.CreateMiner(this);
                 countMiner++;
+                UpdateUI();
             }
+        }
+
+        private void UpdateUI()
+        {
+            textLimitMiner.SetText(string.Format("{0}/{1}", countMiner, FloorTierData.limitCount));
         }
     }
 }

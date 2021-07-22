@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalOnFloor: {fileID: 2579043976445110810}
-  oreIds: 0000000001000000
+  carryOreIds: 0000000001000000
 --- !u!212 &3779829590412933972
 SpriteRenderer:
   m_ObjectHideFlags: 0

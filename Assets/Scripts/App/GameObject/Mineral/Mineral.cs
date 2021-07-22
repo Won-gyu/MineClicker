@@ -17,10 +17,10 @@ namespace Mine
         }
         
         [SerializeField]
-        private List<int> oreIds;
-        public int GetRandomOreId()
+        private List<int> carryOreIds;
+        public int GetRandomCarryOreId()
         {
-            return oreIds[Random.Range(0, oreIds.Count)];
+            return carryOreIds[Random.Range(0, carryOreIds.Count)];
         }
     }
 }

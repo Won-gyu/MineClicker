@@ -10,15 +10,15 @@ namespace Mine
         [SerializeField]
         private List<GameObjectPool> pools;
 
-        public PooledGameObject GetPoolObject(int oreId)
+        public PooledGameObject GetPoolObject(int carryOreId)
         {
-            if (oreId > pools.Count)
+            if (carryOreId > pools.Count)
             {
                 Debug.LogError("pools are set wrong");
                 return null;
             }
 
-            return pools[oreId].GetObject().GetComponent<PooledGameObject>();
+            return pools[carryOreId].GetObject().GetComponent<PooledGameObject>();
         }
     }
 }

@@ -19,11 +19,11 @@ namespace Mine
             }
         }
 
-        public void HoldOre(int oreId)
+        public void HoldOre(int carryOreId)
         {
             if (ore == null)
             {
-                ore = OrePools.Instance.GetPoolObject(oreId);
+                ore = OrePools.Instance.GetPoolObject(carryOreId);
                 ore.transform.SetParent(transform, false);
             }
         }

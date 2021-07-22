@@ -124,7 +124,7 @@ namespace Mine
         private void StartCarry()
         {
             carry = true;
-            oreHolder.HoldOre(mineral.GetRandomOreId());
+            oreHolder.HoldOre(mineral.GetRandomCarryOreId());
         }
 
         private void EndCarry()

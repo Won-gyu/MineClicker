@@ -1366,7 +1366,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1188978531830306694, guid: ba560b982782a7d46baffebb972b069e, type: 3}
       propertyPath: m_Name
-      value: Ore Pools
+      value: Carry Ore Pools
       objectReference: {fileID: 0}
     - target: {fileID: 3277513374109871105, guid: ba560b982782a7d46baffebb972b069e, type: 3}
       propertyPath: m_RootOrder

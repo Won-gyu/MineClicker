@@ -23,7 +23,7 @@ namespace Mine
         {
             if (ore == null)
             {
-                ore = OrePools.Instance.GetPoolObject(carryOreId);
+                ore = CarryOrePools.Instance.GetPoolObject(carryOreId);
                 ore.transform.SetParent(transform, false);
             }
         }

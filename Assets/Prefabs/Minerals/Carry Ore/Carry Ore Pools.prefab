@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3277513374109871105}
-  - component: {fileID: 5204425778390591525}
+  - component: {fileID: 7127142801728170541}
   m_Layer: 0
-  m_Name: Ore Pools
+  m_Name: Carry Ore Pools
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5204425778390591525
+--- !u!114 &7127142801728170541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1188978531830306694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7373bf4374a5b8040aee5a395c6e7658, type: 3}
+  m_Script: {fileID: 11500000, guid: 7909ba4fc3382b54a83a897a2ea528b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pools:

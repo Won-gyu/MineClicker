@@ -5,7 +5,7 @@ using Helper;
 
 namespace Mine
 {
-    public class OrePools : MonoSingleton<OrePools>
+    public class CarryOrePools : MonoSingleton<CarryOrePools>
     {
         [SerializeField]
         private List<GameObjectPool> pools;

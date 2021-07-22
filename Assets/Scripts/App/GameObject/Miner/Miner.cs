@@ -41,7 +41,6 @@ namespace Mine
         private OreHolder oreHolder;
 
         public GoalOnFloor goal;
-        public Vector2 positionGoal;
         private Coroutine coroutineActionState;
         private bool carry;
 
@@ -140,13 +139,14 @@ namespace Mine
         {
             ChangeBodyState(carry ? MinerBodyState.Carry : MinerBodyState.Walk);
             this.goal = goal;
-            positionGoal = goal.GetRandomPositionGoal();
-            Direction = GetDirectionX(positionGoal);
-            while (GetDistanceX(positionGoal) > Speed.magnitude)
-            {
-                Position += Speed;
-                yield return null;
-            }
+            yield return StartCoroutine(CoroutineWalkToX(goal));
+            // positionGoal = goal.GetRandomPositionGoal();
+            // Direction = GetDirectionX(positionGoal);
+            // while (GetDistanceX(positionGoal) > Speed.magnitude)
+            // {
+            //     Position += Speed;
+            //     yield return null;
+            // }
             ChangeBodyState(MinerBodyState.Stand);
         }
 

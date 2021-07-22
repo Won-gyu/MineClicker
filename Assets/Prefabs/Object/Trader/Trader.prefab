@@ -91,6 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1740193526490560668}
+  - component: {fileID: 4393374233123741491}
   m_Layer: 0
   m_Name: Trader
   m_TagString: Untagged
@@ -113,6 +114,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4393374233123741491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4640601057049454272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c746cda1b75b1394dbcc4bafc1c6da45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5910707231733475482
 GameObject:
   m_ObjectHideFlags: 0

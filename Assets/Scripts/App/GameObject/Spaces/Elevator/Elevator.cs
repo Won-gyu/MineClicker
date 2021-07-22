@@ -80,16 +80,16 @@ namespace Mine
         // Action
         private IEnumerator CoroutineMoveTo(int floorLevelGoal)
         {
-            // Debug.Log("@@@ currentFloor: " + currentFloor + " floorLevelGoal: " + floorLevelGoal);
             bool isElevatorGoingUp = floorLevelGoal < currentFloor;
             ArriveOnFloor(currentFloor, isElevatorGoingUp);
             GameObject2D goal = elevatorArea.GetEntrance(floorLevelGoal);
-            Direction = GetDirectionY(goal.Position);
-            while (GetDistanceY(goal.Position) > Speed.magnitude)
-            {
-                Position += Speed;
-                yield return null;
-            }
+            yield return StartCoroutine(CoroutineWalkToY(goal));
+            // Direction = GetDirectionY(goal.Position);
+            // while (GetDistanceY(goal.Position) > Speed.magnitude)
+            // {
+            //     Position += Speed;
+            //     yield return null;
+            // }
             Position = goal.Position;
             ArriveOnFloor(floorLevelGoal, isElevatorGoingUp);
         }

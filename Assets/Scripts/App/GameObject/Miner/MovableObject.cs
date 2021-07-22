@@ -31,5 +31,27 @@ namespace Mine
         }
 
         protected bool flipX;
+        
+        protected IEnumerator CoroutineWalkToX(GoalOnFloor goal)
+        {
+            Vector2 positionGoal = goal.GetRandomPositionGoal();
+            Direction = GetDirectionX(positionGoal);
+            while (GetDistanceX(positionGoal) > Speed.magnitude)
+            {
+                Position += Speed;
+                yield return null;
+            }
+        }
+
+        protected IEnumerator CoroutineWalkToY(GameObject2D goal)
+        {
+            Vector2 positionGoal = goal.Position;
+            Direction = GetDirectionY(positionGoal);
+            while (GetDistanceY(goal.Position) > Speed.magnitude)
+            {
+                Position += Speed;
+                yield return null;
+            }
+        }
     }
 }

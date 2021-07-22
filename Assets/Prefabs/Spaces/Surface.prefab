@@ -185,6 +185,10 @@ PrefabInstance:
       propertyPath: trader
       value: 
       objectReference: {fileID: 5825070077359381350}
+    - target: {fileID: 1473489229707682893, guid: 572fe26a9d725f84ea69829096f544f4, type: 3}
+      propertyPath: dropOff
+      value: 
+      objectReference: {fileID: 6095853200862003566}
     - target: {fileID: 2931606059575036251, guid: 572fe26a9d725f84ea69829096f544f4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -228,6 +232,14 @@ PrefabInstance:
     - target: {fileID: 2931606059575036251, guid: 572fe26a9d725f84ea69829096f544f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699120923618385839, guid: 572fe26a9d725f84ea69829096f544f4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015451078658521143, guid: 572fe26a9d725f84ea69829096f544f4, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9217051542694009388, guid: 572fe26a9d725f84ea69829096f544f4, type: 3}
       propertyPath: m_Name

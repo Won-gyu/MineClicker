@@ -27,6 +27,15 @@ namespace Mine
                 return goalOnFloor;
             }
         }
+        [SerializeField]
+        private GoalOnFloor dropOff;
+        public GoalOnFloor DropOff
+        {
+            get
+            {
+                return dropOff;
+            }
+        }
 
         private void Awake()
         {

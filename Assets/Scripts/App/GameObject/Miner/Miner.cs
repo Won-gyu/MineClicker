@@ -140,13 +140,6 @@ namespace Mine
             ChangeBodyState(carry ? MinerBodyState.Carry : MinerBodyState.Walk);
             this.goal = goal;
             yield return StartCoroutine(CoroutineWalkToX(goal));
-            // positionGoal = goal.GetRandomPositionGoal();
-            // Direction = GetDirectionX(positionGoal);
-            // while (GetDistanceX(positionGoal) > Speed.magnitude)
-            // {
-            //     Position += Speed;
-            //     yield return null;
-            // }
             ChangeBodyState(MinerBodyState.Stand);
         }
 

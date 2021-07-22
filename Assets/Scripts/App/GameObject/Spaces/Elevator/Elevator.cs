@@ -84,12 +84,6 @@ namespace Mine
             ArriveOnFloor(currentFloor, isElevatorGoingUp);
             GameObject2D goal = elevatorArea.GetEntrance(floorLevelGoal);
             yield return StartCoroutine(CoroutineWalkToY(goal));
-            // Direction = GetDirectionY(goal.Position);
-            // while (GetDistanceY(goal.Position) > Speed.magnitude)
-            // {
-            //     Position += Speed;
-            //     yield return null;
-            // }
             Position = goal.Position;
             ArriveOnFloor(floorLevelGoal, isElevatorGoingUp);
         }

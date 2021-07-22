@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: spaceBottom
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6550652361039628644, guid: 8b189aaaa1577544fb6d9d411c8cac22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 6872422536576616886, guid: 8b189aaaa1577544fb6d9d411c8cac22, type: 3}
       propertyPath: m_Name
       value: Surface

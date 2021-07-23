@@ -175,11 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc39abc1dd83dc04989158d109ca0cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &3709519379535924714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,7 +228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477953689809458691, guid: 9b849c2eb50e10344963bd95e3c8ef57, type: 3}
       propertyPath: m_Name
-      value: Ore Pile 01 Big
+      value: Ore Pile 01 Large
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477953689809458691, guid: 9b849c2eb50e10344963bd95e3c8ef57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b849c2eb50e10344963bd95e3c8ef57, type: 3}
@@ -357,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744115972753367685, guid: d89b9650b8a390d4db20ce7893c1d66a, type: 3}
       propertyPath: m_Name
-      value: Ore Pile 01 Very Big
+      value: Ore Pile 01 Very Large
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89b9650b8a390d4db20ce7893c1d66a, type: 3}

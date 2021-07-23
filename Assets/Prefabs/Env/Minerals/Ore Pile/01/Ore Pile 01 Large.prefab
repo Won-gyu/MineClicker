@@ -10,7 +10,11 @@ PrefabInstance:
     - target: {fileID: 806665013872186660, guid: 97598a5b61e22f94ca9fda0ce20f11f1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e4a36ee554abf0b4db37db42b2ab6c1d, type: 3}
+      objectReference: {fileID: 21300000, guid: f74a26fd37ec20749a814a9c069cb6c8, type: 3}
+    - target: {fileID: 806665013872186660, guid: 97598a5b61e22f94ca9fda0ce20f11f1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5765017206967067108, guid: 97598a5b61e22f94ca9fda0ce20f11f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8951621542919958765, guid: 97598a5b61e22f94ca9fda0ce20f11f1, type: 3}
       propertyPath: m_Name
-      value: Ore Pile 01 Big
+      value: Ore Pile 01 Large
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97598a5b61e22f94ca9fda0ce20f11f1, type: 3}

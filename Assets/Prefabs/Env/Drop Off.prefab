@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4735475706273480801}
   m_Layer: 0
-  m_Name: Ore Piles
+  m_Name: Pile Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

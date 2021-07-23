@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3010154423157672021}
   m_Layer: 0
-  m_Name: Pile
+  m_Name: Pile 01 Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0b7c7203117c7c498522865978c2d91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e266296a702faf2498d8ddb03c42850a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

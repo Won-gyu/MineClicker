@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9070730575912863734
+--- !u!1001 &5496860124156436117
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2232995816888259978, guid: 68e6ccbbb7529774ba36e19d99840727, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e4a36ee554abf0b4db37db42b2ab6c1d, type: 3}
+      objectReference: {fileID: 21300000, guid: b0769f7977710a747949e61cd0cafdd9, type: 3}
     - target: {fileID: 3010154423157672021, guid: 68e6ccbbb7529774ba36e19d99840727, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,11 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5031198145893809374, guid: 68e6ccbbb7529774ba36e19d99840727, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.43
+      value: 5.41
       objectReference: {fileID: 0}
     - target: {fileID: 7382634241140270919, guid: 68e6ccbbb7529774ba36e19d99840727, type: 3}
       propertyPath: m_Name
-      value: Pile (2) Variant
+      value: Pile 01 Huge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68e6ccbbb7529774ba36e19d99840727, type: 3}

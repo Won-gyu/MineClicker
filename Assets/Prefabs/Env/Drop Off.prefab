@@ -172,3 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pileArea: {fileID: 1318505516673925020}
+  widthPileRandomPos: 3.5
+  goal: {fileID: 8060211276313188583}

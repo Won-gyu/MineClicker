@@ -20,6 +20,13 @@ namespace Mine
         public int oreId;
         public int orePileCount;
         public PooledGameObject pile;
+        public OrePileSize PileSize
+        {
+            get
+            {
+                return OreManager.Instance.GetOrePileSize(orePileCount);
+            }
+        }
     }
 
     public class DropOff : MonoBehaviour
@@ -28,6 +35,11 @@ namespace Mine
 
         [SerializeField]
         private GameObject pileArea;
+        [SerializeField]
+        private float widthPileRandomPos;
+        [SerializeField]
+        private GoalOnFloor goal;
+
 
         private List<PileSet> pileSets;
         private List<PileSet> prevPileSets; // for calculation
@@ -65,6 +77,11 @@ namespace Mine
                     orePileCount = 0,
                 });
             }
+            for (int i = 0; i < MAX_VISIBLE_PILES; i++)
+            {
+                prevPileSets[i].oreId = -1;
+                prevPileSets[i].orePileCount = 0;
+            }
         }
 
         [Button]
@@ -78,10 +95,8 @@ namespace Mine
             bool changeVisuals = false;
             for (int i = 0; i < MAX_VISIBLE_PILES; i++)
             {
-                if (prevPileSets[i].oreId != pileSets[i].oreId ||
-                    OreManager.Instance.GetOrePileSize(prevPileSets[i].orePileCount) != OreManager.Instance.GetOrePileSize(pileSets[i].orePileCount))
+                if (prevPileSets[i].oreId != pileSets[i].oreId || prevPileSets[i].PileSize != pileSets[i].PileSize)
                 {
-                    Debug.Log("@@@ TEST " + (OreManager.Instance.GetOrePileSize(prevPileSets[i].orePileCount) + " vs " + OreManager.Instance.GetOrePileSize(pileSets[i].orePileCount)));
                     changeVisuals = true;
                     break;
                 }
@@ -91,26 +106,43 @@ namespace Mine
             {
                 for (int i = 0; i < pileSets.Count; i++)
                 {
-                    if (pileSets[i].pile != null)
-                        pileSets[i].pile.ReturnToPool();
 
                     if (i < MAX_VISIBLE_PILES)
                     {
                         if (pileSets[i].orePileCount > 0)
                         {
-                            pileSets[i].pile = OreManager.Instance.CreateOrePile(pileSets[i].oreId, OreManager.Instance.GetOrePileSize(pileSets[i].orePileCount));
-                            pileSets[i].pile.transform.SetParent(pileArea.transform, false);
-                            pileSets[i].pile.transform.localPosition = Vector3.zero;
+                            CreateOrPile(pileSets[i]);
                         }
                     }
+                    else if (pileSets[i].pile != null)
+                    {
+                        pileSets[i].pile.ReturnToPool();
+                    }
+                }
+            
+                for (int i = 0; i < MAX_VISIBLE_PILES; i++)
+                {
+                    prevPileSets[i].oreId = pileSets[i].oreId;
+                    prevPileSets[i].orePileCount = pileSets[i].orePileCount;
                 }
             }
-            
-            for (int i = 0; i < MAX_VISIBLE_PILES; i++)
+        }
+
+        private void CreateOrPile(PileSet pileSet)
+        {
+            PooledGameObject pile = OreManager.Instance.CreateOrePile(pileSet.oreId, pileSet.PileSize);
+            pile.transform.SetParent(pileArea.transform, false);
+            if (pileSet.PileSize == OrePileSize.Small)
             {
-                prevPileSets[i].oreId = pileSets[i].oreId;
-                prevPileSets[i].orePileCount = pileSets[i].orePileCount;
+                pile.transform.localPosition = new Vector3(GetRandomPileAddPosition().x, 0f);
             }
+            else
+            {
+                pile.transform.localPosition = pileSet.pile.transform.localPosition;
+                pileSet.pile.ReturnToPool();
+            }
+
+            pileSet.pile = pile;
         }
 
         private PileSet GetPileSet(int oreId)
@@ -142,6 +174,19 @@ namespace Mine
             Action<List<PileSet>> onPick = (Action<List<PileSet>>)eventData.value;
             onPick(pileSets);
             RefreshPileSets();
+        }
+
+        public Vector2 GetRandomPileAddPosition()
+        {
+            return new Vector2(-widthPileRandomPos * 0.5f + UnityEngine.Random.Range(0, widthPileRandomPos), 0f);
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Vector2 left = transform.position + new Vector3(-widthPileRandomPos * 0.5f, 0.2f);
+            Vector2 right = transform.position + new Vector3(widthPileRandomPos * 0.5f, 0.2f);
+            Gizmos.DrawLine(left, right);
         }
     }
 }

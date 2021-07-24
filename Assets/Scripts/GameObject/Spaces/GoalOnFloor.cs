@@ -17,8 +17,8 @@ namespace Mine
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
-            Vector2 left = transform.position - new Vector3(widthDigable, 0f);
-            Vector2 right = transform.position + new Vector3(widthDigable, 0f);
+            Vector2 left = transform.position - new Vector3(widthDigable * 0.5f, 0f);
+            Vector2 right = transform.position + new Vector3(widthDigable * 0.5f, 0f);
             Gizmos.DrawLine(left, right);
         }
     }

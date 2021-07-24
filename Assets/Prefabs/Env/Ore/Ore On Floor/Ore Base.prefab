@@ -110,4 +110,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalOnFloor: {fileID: 2579043976445110810}
-  carryOreIds: 0000000001000000
+  carryOreIds: 
+  oreId: 0

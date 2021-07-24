@@ -18,6 +18,15 @@ namespace Mine
         
         [SerializeField]
         private List<int> carryOreIds;
+        [SerializeField]
+        private int oreId;
+        
+#if UNITY_EDITOR
+        public void SetOreId(int oreId)
+        {
+            this.oreId = oreId;
+        }
+#endif
         public int GetRandomCarryOreId()
         {
             return carryOreIds[Random.Range(0, carryOreIds.Count)];

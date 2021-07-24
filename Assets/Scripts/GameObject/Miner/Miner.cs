@@ -30,7 +30,7 @@ namespace Mine
         public Floor currentFloor;
         public Basement basementWorkPlace;
         public ElevatorArea elevator;
-        public Ore mineral;
+        public Ore oreAssigned;
         public MinerActionState actionState;
         public MinerBodyState bodyState;
         public float delayDig;
@@ -93,8 +93,8 @@ namespace Mine
         // State
         private IEnumerator StateCoroutineFindingMineral()
         {
-            mineral = basementWorkPlace.GetRandomMineral();
-            yield return StartCoroutine(CoroutineWalkTo(mineral.GoalOnFloor));
+            oreAssigned = basementWorkPlace.GetRandomMineral();
+            yield return StartCoroutine(CoroutineWalkTo(oreAssigned.GoalOnFloor));
             ChangeActionState(MinerActionState.Dig);
         }
 
@@ -117,14 +117,14 @@ namespace Mine
             yield return StartCoroutine(CoroutineWalkTo(SpaceManager.Instance.Surface.GoalElevator));
             yield return StartCoroutine(CoroutineMoveToFloor(basementWorkPlace.FloorLevel));
 
-            mineral = null;
+            oreAssigned = null;
             ChangeActionState(MinerActionState.FindMineral);
         }
 
         private void StartCarry()
         {
             carry = true;
-            oreHolder.HoldOre(mineral.GetRandomCarryOreId());
+            oreHolder.HoldOre(oreAssigned.GetRandomCarryOreId());
         }
 
         private void EndCarry()
@@ -132,7 +132,6 @@ namespace Mine
             carry = false;
             oreHolder.ReturnOre();
         }
-
 
         // Action
         private IEnumerator CoroutineWalkTo(GoalOnFloor goal)

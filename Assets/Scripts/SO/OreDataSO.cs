@@ -11,7 +11,19 @@ namespace Mine
 #endif
     public class OreDataSO : ScriptableObject
     {
+        [BoxGroup("Ore")]
+        public List<Ore> prefabOres;
+#if UNITY_EDITOR
+        [Button]
+        private void ApplyOres()
+        {
+            for (int i = 0; i < prefabOres.Count; i++)
+            {
+                prefabOres[i].SetOreId(i);
+            }
+        }
+#endif
         [BoxGroup("Pile")]
-        public List<GameObject> prefabPiles;
+        public List<GameObject> prefabPileGroups;
     }
 }

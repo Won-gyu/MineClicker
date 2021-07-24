@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313658577806261093}
-  - component: {fileID: 7448674108607396394}
   - component: {fileID: 3779829590412933972}
   - component: {fileID: 2579043976445110810}
+  - component: {fileID: 857365679940540798}
   m_Layer: 0
-  m_Name: Mineral Base
+  m_Name: Ore Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,20 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7448674108607396394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4746404992821608421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5136b54b028e6324a96cdc59e95fabbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goalOnFloor: {fileID: 2579043976445110810}
-  carryOreIds: 0000000001000000
 --- !u!212 &3779829590412933972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,3 +97,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   widthDigable: 1.41
+--- !u!114 &857365679940540798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746404992821608421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2bb42c85d71aa40a25246405eceef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalOnFloor: {fileID: 2579043976445110810}
+  carryOreIds: 0000000001000000

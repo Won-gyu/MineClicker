@@ -30,7 +30,7 @@ namespace Mine
         public Floor currentFloor;
         public Basement basementWorkPlace;
         public ElevatorArea elevator;
-        public Mineral mineral;
+        public Ore mineral;
         public MinerActionState actionState;
         public MinerBodyState bodyState;
         public float delayDig;

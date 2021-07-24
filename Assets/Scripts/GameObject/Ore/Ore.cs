@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Mine
 {
-    public class Mineral : MonoBehaviour
+    public class Ore : MonoBehaviour
     {
         [SerializeField]
         private GoalOnFloor goalOnFloor;

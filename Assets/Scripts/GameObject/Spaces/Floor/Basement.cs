@@ -23,17 +23,17 @@ namespace Mine
         [SerializeField]
         private TextMeshPro textLimitMiner;
 
-        private Mineral[] minerals;
+        private Ore[] minerals;
         private int countMiner;
 
         private void Awake()
         {
-            minerals = mineralArea.GetComponentsInChildren<Mineral>();
+            minerals = mineralArea.GetComponentsInChildren<Ore>();
             goalElevator.Position = new Vector2(goalElevator.Position.x, spawner.position.y);
             UpdateUI();
         }
 
-        public Mineral GetRandomMineral()
+        public Ore GetRandomMineral()
         {
             return minerals[Random.Range(0, minerals.Length)];
         }

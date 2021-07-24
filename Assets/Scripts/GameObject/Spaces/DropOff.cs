@@ -7,9 +7,9 @@ namespace Mine
     public enum OrePileSize
     {
         Small,
-        Mid,
-        Big,
-        VeryBig
+        Med,
+        Large,
+        VeryLarge
     }
 
     public class PileSet
@@ -25,8 +25,11 @@ namespace Mine
 
     public class DropOff : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject pileArea;
         private List<GameObject> orePiles;
         private PileSet pileSet;
 
+        // public void Drop()
     }
 }

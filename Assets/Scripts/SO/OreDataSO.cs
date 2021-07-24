@@ -12,6 +12,8 @@ namespace Mine
     public class OreDataSO : ScriptableObject
     {
         [BoxGroup("Ore")]
+        public List<int> orePileRange;
+        [BoxGroup("Ore")]
         public List<Ore> prefabOres;
 #if UNITY_EDITOR
         [Button]

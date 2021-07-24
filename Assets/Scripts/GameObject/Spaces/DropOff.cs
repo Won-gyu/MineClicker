@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 namespace Mine
 {
     public enum OrePileSize
     {
-        Small,
-        Med,
+        VeryLarge,
         Large,
-        VeryLarge
+        Med,
+        Small
     }
 
     public class PileSet
     {
+        public int oreId;
         public int orePileCount;
-        public int orePileId;
+        public PooledGameObject pile;
     }
 
     public class DropOff : MonoBehaviour
@@ -24,18 +26,74 @@ namespace Mine
 
         [SerializeField]
         private GameObject pileArea;
-        private List<GameObject> orePiles;
-        private List<PileSet> pileSet;
+        private List<PileSet> pileSets;
+        private List<int> prevOreIds; // for calculation
 
         private void Awake()
         {
-            pileSet = new List<PileSet>();
-            // for (int i = 0; i < )
+            prevOreIds = new List<int>();
+            for (int i = 0; i < MAX_VISIBLE_PILES; i++)
+                prevOreIds.Add(-1);
+
+            pileSets = new List<PileSet>();
+            for (int i = 0; i < OreManager.Instance.TotalOreCount; i++)
+            {
+                pileSets.Add(new PileSet
+                {
+                    oreId = i,
+                    orePileCount = 0,
+                });
+            }
+        }
+
+        [Button]
+        private void SortPileSets()
+        {
+            for (int i = 0; i < MAX_VISIBLE_PILES; i++)
+                prevOreIds[i] = pileSets[i].oreId;
+
+            pileSets.Sort((a, b) =>
+            {
+                return a.orePileCount - b.orePileCount;
+            });
+
+            bool isResorted = false;
+            for (int i = 0; i < MAX_VISIBLE_PILES; i++)
+            {
+                if (prevOreIds[i] != pileSets[i].oreId)
+                {
+                    isResorted = true;
+                }
+            }
+
+            if (isResorted)
+            {
+                for (int i = 0; i < pileSets.Count; i++)
+                {
+                    if (i < MAX_VISIBLE_PILES)
+                    {
+                        pileSets[i].pile = OreManager.Instance.CreateOrePile(pileSets[i].oreId, (OrePileSize)i);
+                        pileSets[i].pile.transform.SetParent(pileArea.transform);
+                    }
+                    else
+                    {
+                        pileSets[i].pile.ReturnToPool();
+                    }
+                }
+            }
         }
 
         public void DropCarryOre(CarryOre carryOre)
         {
-
+            // todo: refactoring
+            for (int i = 0; i < pileSets.Count; i++)
+            {
+                if (pileSets[i].oreId == carryOre.OreId)
+                {
+                    pileSets[i].orePileCount++;
+                }
+            }
+            SortPileSets();
         }
     }
 }

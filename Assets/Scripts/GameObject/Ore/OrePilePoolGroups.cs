@@ -10,9 +10,9 @@ namespace Mine
         [SerializeField]
         private List<OrePilePoolGroup> groups;
 
-        public PooledGameObject GetGroupObject(int orePileId, int sizeIndex)
+        public PooledGameObject GetOrePileObject(int oreId, OrePileSize size)
         {
-            return groups[orePileId].GetPoolObject(sizeIndex);
+            return groups[oreId].GetPoolObject(size);
         }
     }
 }

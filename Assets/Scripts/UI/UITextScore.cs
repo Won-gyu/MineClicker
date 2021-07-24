@@ -13,17 +13,17 @@ namespace Mine
 
         private void Awake()
         {
-            MessageDispatcher.Subscribe(StageManager.EVENT_ORE_STORED, OnOreStored);
+            MessageDispatcher.Subscribe(OreManager.EVENT_ORE_STORED, OnOreStored);
         }
 
         protected void OnDestroy()
         {
-            MessageDispatcher.UnSubscribe(StageManager.EVENT_ORE_STORED, OnOreStored);
+            MessageDispatcher.UnSubscribe(OreManager.EVENT_ORE_STORED, OnOreStored);
         }
         
         private void OnOreStored(EventData eventData)
         {
-            textScore.SetText(string.Format("SCORE: {0}", StageManager.Instance.OreStored));
+            textScore.SetText(string.Format("SCORE: {0}", UserDataManager.Instance.OreStored));
         }
     }
 }

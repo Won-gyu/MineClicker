@@ -21,5 +21,30 @@ namespace Mine
                 return userData;
             }
         }
+
+        private void Awake()
+        {
+            MessageDispatcher.Subscribe(OreManager.EVENT_EXEC_STORE_ORE, OnStoreOre);
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            MessageDispatcher.UnSubscribe(OreManager.EVENT_EXEC_STORE_ORE, OnStoreOre);
+        }
+
+        private void OnStoreOre(EventData eventData)
+        {
+            UserData.oreStored++;
+            MessageDispatcher.Dispatch(OreManager.EVENT_ORE_STORED);
+        }
+        
+        public int OreStored
+        {
+            get
+            {
+                return userData.oreStored;
+            }
+        }
     }
 }

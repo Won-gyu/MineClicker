@@ -14,21 +14,24 @@ namespace Mine
 
     public class PileSet
     {
-        public PileSet()
-        {
-            orePileCounts = new List<int>();
-            orePileIds = new List<int>();
-        }
-        public List<int> orePileCounts;
-        public List<int> orePileIds;
+        public int orePileCount;
+        public int orePileId;
     }
 
     public class DropOff : MonoBehaviour
     {
+        public const int MAX_VISIBLE_PILES = 4;
+
         [SerializeField]
         private GameObject pileArea;
         private List<GameObject> orePiles;
-        private PileSet pileSet;
+        private List<PileSet> pileSet;
+
+        private void Awake()
+        {
+            pileSet = new List<PileSet>();
+            // for (int i = 0; i < )
+        }
 
         public void DropCarryOre(CarryOre carryOre)
         {

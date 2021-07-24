@@ -15,12 +15,19 @@ namespace Mine
                 return goalOnFloor;
             }
         }
-        
+
         [SerializeField]
         private List<int> carryOreIds;
         [SerializeField]
         private int oreId;
-        
+        public int OreId
+        {
+            get
+            {
+                return oreId;
+            }
+        }
+
 #if UNITY_EDITOR
         public void SetOreId(int oreId)
         {

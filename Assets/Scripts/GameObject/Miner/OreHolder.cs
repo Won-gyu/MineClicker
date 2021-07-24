@@ -7,24 +7,28 @@ namespace Mine
 {
     public class OreHolder : MonoBehaviour
     {
-        private PooledGameObject ore;
+        private PooledGameObject objCarryOre;
+        private CarryOre carryOre;
 
         public void ReturnOre()
         {
-            if (ore != null)
+            if (objCarryOre != null)
             {
-                ore.ReturnToPool();
-                ore = null;
+                objCarryOre.ReturnToPool();
+                objCarryOre = null;
+                carryOre = null;
                 MessageDispatcher.Dispatch("Game_ExecStoreOre");
             }
         }
 
-        public void HoldOre(int carryOreId)
+        public void HoldOre(Ore ore)
         {
-            if (ore == null)
+            if (objCarryOre == null)
             {
-                ore = CarryOrePools.Instance.GetPoolObject(carryOreId);
-                ore.transform.SetParent(transform, false);
+                objCarryOre = CarryOrePools.Instance.GetPoolObject(ore.GetRandomCarryOreId());
+                objCarryOre.transform.SetParent(transform, false);
+                carryOre = objCarryOre.GetComponent<CarryOre>();
+                carryOre.Init(ore.OreId);
             }
         }
     }

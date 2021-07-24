@@ -30,6 +30,9 @@ namespace Mine
         private List<GameObject> orePiles;
         private PileSet pileSet;
 
-        // public void Drop()
+        public void DropCarryOre(CarryOre carryOre)
+        {
+
+        }
     }
 }

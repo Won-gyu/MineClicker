@@ -102,17 +102,11 @@ namespace Helper
                 try 
                 {
                     googleSheet = new GoogleSheet();
-                    Debug.Log("@@@ TEST1");
                     googleSheet.webServiceUrl = HelperSettings.Instance.googleWebServiceUrl;
-                    Debug.Log("@@@ TEST2");
                     googleSheet.servicePassword = HelperSettings.Instance.googleWebServicePassword;
-                    Debug.Log("@@@ TEST3");
                     googleSheet.spreadsheetId = parent.googleSpreadSheetId;
-                    Debug.Log("@@@ TEST4");
                     googleSheet.rawResponseCallback.AddListener(HandleErrors);
-                    Debug.Log("@@@ TEST5");
                     googleSheet.processedResponseCallback.AddListener(Imported);
-                    Debug.Log("@@@ TEST6");
                     switch(queryType)
                     {
                     case GoogleSheet.QueryType.getTable:

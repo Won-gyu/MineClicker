@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Helper;
+using System;
 
 namespace Mine
 {
@@ -37,11 +38,13 @@ namespace Mine
             InitFeilds();
             
             MessageDispatcher.Subscribe(OreManager.EVENT_ORE_PILE_STORED, OnOrePileStored);
+            MessageDispatcher.Subscribe(Trader.EVENT_EXEC_PICK_ORE_PILE, OnPickOrePile);
         }
 
         private void OnDestroy()
         {
             MessageDispatcher.UnSubscribe(OreManager.EVENT_ORE_PILE_STORED, OnOrePileStored);
+            MessageDispatcher.UnSubscribe(Trader.EVENT_EXEC_PICK_ORE_PILE, OnPickOrePile);
         }
 
         private void InitFeilds()
@@ -49,7 +52,11 @@ namespace Mine
             prevOreIds = new List<int>();
             for (int i = 0; i < MAX_VISIBLE_PILES; i++)
                 prevOreIds.Add(-1);
+            RefreshPileSets();
+        }
 
+        private void RefreshPileSets()
+        {
             pileSets = new List<PileSet>();
             for (int i = 0; i < OreManager.Instance.TotalOreCount; i++)
             {
@@ -59,6 +66,7 @@ namespace Mine
                     orePileCount = 0,
                 });
             }
+            isObjInitialized = false;
         }
 
         [Button]
@@ -92,6 +100,7 @@ namespace Mine
                         {
                             pileSets[i].pile = OreManager.Instance.CreateOrePile(pileSets[i].oreId, (OrePileSize)i);
                             pileSets[i].pile.transform.SetParent(pileArea.transform, false);
+                            pileSets[i].pile.transform.localPosition = Vector3.zero;
                         }
                     }
                     else
@@ -124,6 +133,13 @@ namespace Mine
         private void OnOrePileStored(EventData eventData)
         {
             DropCarryOre((CarryOre)eventData.value);
+        }
+
+        private void OnPickOrePile(EventData eventData)
+        {
+            Action<List<PileSet>> onPick = (Action<List<PileSet>>)eventData.value;
+            onPick(pileSets);
+            RefreshPileSets();
         }
     }
 }

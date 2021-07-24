@@ -110,7 +110,7 @@ namespace Mine
             StartCarry();
             yield return StartCoroutine(CoroutineWalkTo(basementWorkPlace.GoalElevator));
             yield return StartCoroutine(CoroutineMoveToFloor(SpaceManager.Instance.Surface.FloorLevel));
-            yield return StartCoroutine(CoroutineWalkTo(SpaceManager.Instance.Surface.DropOff));
+            yield return StartCoroutine(CoroutineWalkTo(SpaceManager.Instance.Surface.GoalDropOff));
             EndCarry();
 
             ChangeBodyState(MinerBodyState.Stand);

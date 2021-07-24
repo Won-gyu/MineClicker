@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorLevel: 0
   goalElevator: {fileID: 7557618351785028425}
-  dropOff: {fileID: 6095853200862003566}
+  dropOff: {fileID: 5001181270454787044}
 --- !u!1001 &19133400143509263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,6 +383,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52eb6e976d8cc23479152963fd65104f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5001181270454787044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9089546753601651309, guid: 86521dba277e147489fa7ebb3022c2cd, type: 3}
+  m_PrefabInstance: {fileID: 4270341822161623433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc39abc1dd83dc04989158d109ca0cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7795353590334391381

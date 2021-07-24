@@ -53,9 +53,9 @@ namespace Mine
 
         public OrePileSize GetOrePileSize(int count)
         {
-            for (int i = totalSizeLength - 1; i >= 0; i--)
+            for (int i = 0; i < totalSizeLength; i++)
             {
-                if (i == 0 || count < GetOrePileRange((OrePileSize)i))
+                if (i == totalSizeLength - 1 || count > GetOrePileRange((OrePileSize)i))
                 {
                     return (OrePileSize)i;
                 }

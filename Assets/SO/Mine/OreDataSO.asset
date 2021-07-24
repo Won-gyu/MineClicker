@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21944a87e4f046d4aa8fffd844d21684, type: 3}
   m_Name: OreDataSO
   m_EditorClassIdentifier: 
-  orePileRange: ffffffff32000000140000000a000000
+  orePileRange: 32000000140000000a00000000000000
   prefabOres:
   - {fileID: 6676688133160882683, guid: b363e390a44300f40a391e0cdfe84bd0, type: 3}
   - {fileID: 6154603559720847878, guid: a77802a32fc08f54bb0836dc05fa3c18, type: 3}

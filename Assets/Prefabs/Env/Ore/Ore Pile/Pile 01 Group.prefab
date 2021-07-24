@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - {fileID: 8396877849941238735}
-  - {fileID: 9216648361325521548}
-  - {fileID: 9060426028158701768}
   - {fileID: 3396352121816275456}
+  - {fileID: 9060426028158701768}
+  - {fileID: 9216648361325521548}
+  - {fileID: 8396877849941238735}
 --- !u!1 &5523175209267972009
 GameObject:
   m_ObjectHideFlags: 0

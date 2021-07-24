@@ -85,8 +85,11 @@ namespace Mine
                 {
                     if (i < MAX_VISIBLE_PILES)
                     {
-                        pileSets[i].pile = OreManager.Instance.CreateOrePile(pileSets[i].oreId, (OrePileSize)i);
-                        pileSets[i].pile.transform.SetParent(pileArea.transform);
+                        if (pileSets[i].orePileCount > 0)
+                        {
+                            pileSets[i].pile = OreManager.Instance.CreateOrePile(pileSets[i].oreId, (OrePileSize)i);
+                            pileSets[i].pile.transform.SetParent(pileArea.transform);
+                        }
                     }
                     else
                     {

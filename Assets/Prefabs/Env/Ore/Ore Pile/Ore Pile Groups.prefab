@@ -99,7 +99,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4820289097905273802, guid: 502955bb43231c0478ab42ce2012c5c5, type: 3}
       propertyPath: m_Name
-      value: Pile 01 Group
+      value: Pile 00 Group
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 502955bb43231c0478ab42ce2012c5c5, type: 3}

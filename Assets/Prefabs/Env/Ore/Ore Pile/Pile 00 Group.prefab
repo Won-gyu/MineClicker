@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 3539666938326680966}
   - component: {fileID: 3821899510126888673}
   m_Layer: 0
-  m_Name: Pile 01 Group
+  m_Name: Pile 00 Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

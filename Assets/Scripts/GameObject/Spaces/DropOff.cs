@@ -27,8 +27,10 @@ namespace Mine
 
         [SerializeField]
         private GameObject pileArea;
+
         private List<PileSet> pileSets;
         private List<int> prevOreIds; // for calculation
+        private bool isObjInitialized;
 
         private void Awake()
         {
@@ -67,7 +69,7 @@ namespace Mine
 
             pileSets.Sort((a, b) =>
             {
-                return a.orePileCount - b.orePileCount;
+                return b.orePileCount - a.orePileCount;
             });
 
             bool isResorted = false;
@@ -79,8 +81,9 @@ namespace Mine
                 }
             }
 
-            if (isResorted)
+            if (isResorted || !isObjInitialized)
             {
+                isObjInitialized = true;
                 for (int i = 0; i < pileSets.Count; i++)
                 {
                     if (i < MAX_VISIBLE_PILES)
@@ -88,7 +91,7 @@ namespace Mine
                         if (pileSets[i].orePileCount > 0)
                         {
                             pileSets[i].pile = OreManager.Instance.CreateOrePile(pileSets[i].oreId, (OrePileSize)i);
-                            pileSets[i].pile.transform.SetParent(pileArea.transform);
+                            pileSets[i].pile.transform.SetParent(pileArea.transform, false);
                         }
                     }
                     else

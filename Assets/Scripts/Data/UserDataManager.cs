@@ -7,6 +7,9 @@ namespace Mine
 {
     public class UserDataManager : MonoSingleton<UserDataManager>
     {
+        public const string EVENT_EXEC_ADD_CREDIT = "Game_ExecAddCredit";
+        public const string EVENT_CREDIT_ADDED = "Game_CreditAdded";
+
         private UserData userData;
         public UserData UserData
         {
@@ -25,26 +28,25 @@ namespace Mine
         private void Awake()
         {
             MessageDispatcher.Subscribe(OreManager.EVENT_EXEC_STORE_ORE_PILE, OnStoreOrePile);
+            MessageDispatcher.Subscribe(EVENT_EXEC_ADD_CREDIT, OnAddCredit);
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
             MessageDispatcher.UnSubscribe(OreManager.EVENT_EXEC_STORE_ORE_PILE, OnStoreOrePile);
+            MessageDispatcher.UnSubscribe(EVENT_EXEC_ADD_CREDIT, OnAddCredit);
         }
 
         private void OnStoreOrePile(EventData eventData)
         {
-            UserData.oreStored++;
             MessageDispatcher.Dispatch<CarryOre>(OreManager.EVENT_ORE_PILE_STORED, (CarryOre)eventData.value);
         }
-        
-        public int OreStored
+
+        private void OnAddCredit(EventData eventData)
         {
-            get
-            {
-                return userData.oreStored;
-            }
+            UserData.credit += (double)eventData.value;
+            MessageDispatcher.Dispatch(EVENT_CREDIT_ADDED);
         }
     }
 }

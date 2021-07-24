@@ -30,7 +30,7 @@ namespace Mine
                     floorData[i].tier = 1;
             }
         }
-        public int oreStored;
+        public double credit;
         public List<FloorData> floorData;
     }
 

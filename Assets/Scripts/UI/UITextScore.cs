@@ -13,17 +13,17 @@ namespace Mine
 
         private void Awake()
         {
-            MessageDispatcher.Subscribe(OreManager.EVENT_ORE_PILE_STORED, OnOrePileStored);
+            MessageDispatcher.Subscribe(UserDataManager.EVENT_CREDIT_ADDED, OnCreditAdded);
         }
 
         protected void OnDestroy()
         {
-            MessageDispatcher.UnSubscribe(OreManager.EVENT_ORE_PILE_STORED, OnOrePileStored);
+            MessageDispatcher.UnSubscribe(UserDataManager.EVENT_CREDIT_ADDED, OnCreditAdded);
         }
         
-        private void OnOrePileStored(EventData eventData)
+        private void OnCreditAdded(EventData eventData)
         {
-            textScore.SetText(string.Format("SCORE: {0}", UserDataManager.Instance.OreStored));
+            textScore.SetText(string.Format("SCORE: {0}", (long)UserDataManager.Instance.UserData.credit));
         }
     }
 }

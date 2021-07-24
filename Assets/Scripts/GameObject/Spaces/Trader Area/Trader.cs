@@ -38,8 +38,8 @@ namespace Mine
                 PickOrePiles();
                 yield return new WaitForSeconds(0.5f);
                 yield return StartCoroutine(CoroutineWalkToX(traderArea.GoalOnFloor));
-                yield return new WaitForSeconds(5f);
                 ChangeOrePilesToCredit();
+                yield return new WaitForSeconds(5f);
             }
         }
 
@@ -59,7 +59,10 @@ namespace Mine
             for (int i = 0; i < pileSets.Count; i++)
             {
                 if (pileSets[i].orePileCount > 0)
+                {
+                    MessageDispatcher.Dispatch<double>(UserDataManager.EVENT_EXEC_ADD_CREDIT, (double)pileSets[i].orePileCount);
                     pileSets[i].pile.ReturnToPool();
+                }
             }
             pileSets = null;
         }

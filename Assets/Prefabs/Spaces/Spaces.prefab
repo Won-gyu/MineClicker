@@ -435,14 +435,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.38
       objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.48
-      objectReference: {fileID: 0}
     - target: {fileID: 5165249489527549570, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
       propertyPath: floorLevel
       value: 2
@@ -688,26 +680,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.5400002
       objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.6399999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5165249489527549570, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
       propertyPath: floorLevel
       value: 1
@@ -868,14 +840,6 @@ PrefabInstance:
     - target: {fileID: 4610906503645296223, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.6399999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997370619146868027, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 5165249489527549570, guid: 063b20771b4bc9b42bb6986c2ae74488, type: 3}
       propertyPath: floorLevel

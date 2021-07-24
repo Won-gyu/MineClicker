@@ -24,19 +24,19 @@ namespace Mine
 
         private void Awake()
         {
-            MessageDispatcher.Subscribe(OreManager.EVENT_EXEC_STORE_ORE, OnStoreOre);
+            MessageDispatcher.Subscribe(OreManager.EVENT_EXEC_STORE_ORE_PILE, OnStoreOrePile);
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            MessageDispatcher.UnSubscribe(OreManager.EVENT_EXEC_STORE_ORE, OnStoreOre);
+            MessageDispatcher.UnSubscribe(OreManager.EVENT_EXEC_STORE_ORE_PILE, OnStoreOrePile);
         }
 
-        private void OnStoreOre(EventData eventData)
+        private void OnStoreOrePile(EventData eventData)
         {
             UserData.oreStored++;
-            MessageDispatcher.Dispatch(OreManager.EVENT_ORE_STORED);
+            MessageDispatcher.Dispatch<CarryOre>(OreManager.EVENT_ORE_PILE_STORED, (CarryOre)eventData.value);
         }
         
         public int OreStored

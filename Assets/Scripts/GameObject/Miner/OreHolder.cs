@@ -14,10 +14,10 @@ namespace Mine
         {
             if (objCarryOre != null)
             {
+                MessageDispatcher.Dispatch<CarryOre>(OreManager.EVENT_EXEC_STORE_ORE_PILE, carryOre);
                 objCarryOre.ReturnToPool();
                 objCarryOre = null;
                 carryOre = null;
-                MessageDispatcher.Dispatch("Game_ExecStoreOre");
             }
         }
 

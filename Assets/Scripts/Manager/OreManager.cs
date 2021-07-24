@@ -7,8 +7,8 @@ namespace Mine
 {
     public class OreManager : MonoSingleton<OreManager>
     {
-        public const string EVENT_EXEC_STORE_ORE = "Game_ExecStoreOre";
-        public const string EVENT_ORE_STORED = "Game_OreStored";
+        public const string EVENT_EXEC_STORE_ORE_PILE = "Game_ExecStoreOrePile";
+        public const string EVENT_ORE_PILE_STORED = "Game_OrePileStored";
 
         [SerializeField]
         private OreDataSO oreData;

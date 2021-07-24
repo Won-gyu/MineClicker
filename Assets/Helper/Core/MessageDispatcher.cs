@@ -53,12 +53,20 @@ namespace Helper
 			}
 		}
 
-		public static void Dispatch(string eventName, EventData eventData = null)
+		public static void Dispatch(string eventName)
 		{
 			EventDelegate del;
 
 			if (delegates.TryGetValue(eventName, out del))
-				del.Invoke(eventData);
+				del.Invoke(null);
+		}
+		
+		public static void Dispatch<T>(string eventName, T value)
+		{
+			EventDelegate del;
+
+			if (delegates.TryGetValue(eventName, out del))
+				del.Invoke(new EventData<T>(eventName, value));
 		}
 	}
 }

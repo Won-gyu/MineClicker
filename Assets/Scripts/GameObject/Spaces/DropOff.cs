@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Helper;
 
 namespace Mine
 {
@@ -30,6 +31,18 @@ namespace Mine
         private List<int> prevOreIds; // for calculation
 
         private void Awake()
+        {
+            InitFeilds();
+            
+            MessageDispatcher.Subscribe(OreManager.EVENT_ORE_PILE_STORED, OnOrePileStored);
+        }
+
+        private void OnDestroy()
+        {
+            MessageDispatcher.UnSubscribe(OreManager.EVENT_ORE_PILE_STORED, OnOrePileStored);
+        }
+
+        private void InitFeilds()
         {
             prevOreIds = new List<int>();
             for (int i = 0; i < MAX_VISIBLE_PILES; i++)
@@ -83,17 +96,28 @@ namespace Mine
             }
         }
 
-        public void DropCarryOre(CarryOre carryOre)
+        private PileSet GetPileSet(int oreId)
         {
             // todo: refactoring
             for (int i = 0; i < pileSets.Count; i++)
             {
-                if (pileSets[i].oreId == carryOre.OreId)
+                if (pileSets[i].oreId == oreId)
                 {
-                    pileSets[i].orePileCount++;
+                    return pileSets[i];
                 }
             }
+            return null;
+        }
+
+        public void DropCarryOre(CarryOre carryOre)
+        {
+            GetPileSet(carryOre.OreId).orePileCount++;
             SortPileSets();
+        }
+
+        private void OnOrePileStored(EventData eventData)
+        {
+            DropCarryOre((CarryOre)eventData.value);
         }
     }
 }

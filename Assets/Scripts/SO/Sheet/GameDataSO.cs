@@ -20,11 +20,13 @@ namespace Mine
     {
         public SpreadSheetGameDataInfos sheetGameDataInfos;
 
+#if UNITY_EDITOR
         [Button]
         protected override void ApplySheetInfos()
         {
             string path = string.Format("{0}/{1}/{2}", Application.dataPath, shteetTableObjectDirectory, "GameDataSheet.json");
             sheetGameDataInfos = FileUtils.FromJson<SpreadSheetGameDataInfos>(path);
         }
+#endif
     }
 }

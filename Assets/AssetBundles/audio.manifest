@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 1096124810
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 77fc036a6ac193c0b05aac83deecfb67
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Audios/SFX/Arrow Hit Metal 1_2.wav
+- Assets/Audios/SFX/Arrow Hit Stone 1_4.wav
+- Assets/Audios/SFX/Arrow Hit Metal 1_3.wav
+- Assets/Audios/SFX/Arrow Hit Metal 1_5.wav
+- Assets/Audios/SFX/Arrow Hit Stone 1_1.wav
+- Assets/Audios/Music/Ancient Ruins.mp3
+- Assets/Audios/SFX/Special & Powerup (47).wav
+- Assets/Audios/SFX/Arrow Hit Stone 1_2.wav
+- Assets/Audios/SFX/Arrow Hit Metal 1_1.wav
+- Assets/Audios/SFX/Arrow Hit Stone 1_3.wav
+- Assets/Audios/SFX/Arrow Hit Metal 1_4.wav
+Dependencies: []

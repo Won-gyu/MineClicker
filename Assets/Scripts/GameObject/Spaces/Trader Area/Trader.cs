@@ -13,14 +13,10 @@ namespace Mine
         private TraderArea traderArea;
         private List<PileSet> pileSets;
 
-        private void Awake()
-        {
-            flipX = true;
-        }
-
         public void Init(TraderArea traderArea)
         {
             this.traderArea = traderArea;
+            flipX = true;
             StartCoroutine(UpdateCoroutine());
         }
 

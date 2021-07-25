@@ -37,9 +37,9 @@ namespace Helper
             }
         }
 
-        public T LoadAsset<T>(string assetBundleName, string assetName) where T : UnityEngine.Object
-        {
 #if UNITY_EDITOR
+        public static T LoadAssetForEditor<T>(string assetBundleName, string assetName) where T : UnityEngine.Object
+        {
             string[] assetPaths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(assetBundleName, assetName);
             if (assetPaths.Length > 0)
             {
@@ -50,6 +50,13 @@ namespace Helper
                 Debug.Log("[AssetBundleManager] There is no asset with name \"" + assetName + "\" in " + assetBundleName);
                 return null;
             }
+        }
+#endif
+
+        public T LoadAsset<T>(string assetBundleName, string assetName) where T : UnityEngine.Object
+        {
+#if UNITY_EDITOR
+            return LoadAssetForEditor<T>(assetBundleName, assetName);
 #else
             AssetBundle bundle;
             if (bundleDict.TryGetValue(assetBundleName, out bundle))

@@ -15,5 +15,8 @@ MonoBehaviour:
   shteetTableObjectDirectory: SO
   sheetAudioDataInfos:
     AudioData:
-    - id: test
-      clip: audio
+    - id: arrowHit1
+      clip: Arrow Hit Metal 1_1
+  audioDataInfos:
+  - id: arrowHit1
+    clip: {fileID: 8300000, guid: 0555f3f7b12da844aa7fda9cf6964168, type: 3}

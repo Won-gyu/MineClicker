@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6996932176523258388, guid: 6cc3df54bfa80e34ea4a16ffb93dac02, type: 3}
       propertyPath: m_Name
-      value: Ore Pile 01 Very Large
+      value: Ore Pile 03 Very Large
       objectReference: {fileID: 0}
     - target: {fileID: 7689885306007093124, guid: 6cc3df54bfa80e34ea4a16ffb93dac02, type: 3}
       propertyPath: m_RootOrder

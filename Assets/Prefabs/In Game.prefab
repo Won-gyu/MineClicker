@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ores
       objectReference: {fileID: 0}
+    - target: {fileID: 3981972206347772577, guid: 4cf800ba877b68645893370660e2af21, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1872057321452948867, guid: d89b9650b8a390d4db20ce7893c1d66a, type: 3}
     - target: {fileID: 6297992281865921784, guid: 4cf800ba877b68645893370660e2af21, type: 3}
       propertyPath: groups.Array.size
       value: 2
@@ -307,6 +311,10 @@ PrefabInstance:
       propertyPath: groups.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7340185328785614953, guid: 4cf800ba877b68645893370660e2af21, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 515677925208268824, guid: 433265fd201d65b4781268a9b5157303, type: 3}
     - target: {fileID: 7658636063263618558, guid: 4cf800ba877b68645893370660e2af21, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -351,6 +359,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7847303785004227438, guid: 4cf800ba877b68645893370660e2af21, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1046961762959682031, guid: c75d29818539ff74c8dbdbc580860777, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cf800ba877b68645893370660e2af21, type: 3}
 --- !u!4 &5516188679958415188 stripped

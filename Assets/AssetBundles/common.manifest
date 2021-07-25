@@ -1,0 +1,111 @@
+ManifestFileVersion: 0
+CRC: 759513453
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bda699cf796f5773a4238ef6113ad095
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 050b0a8d68dc15f3e0ac00b436c82933
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 593d27210b29bd34eabd50604ee5df8d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c0d6c7c9cdf512a46a38480991b49295, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 14018301fabd33643bb4a04260bd302e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 940a9501fa5e99d46afe09b63c9b7df5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 21944a87e4f046d4aa8fffd844d21684, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c746cda1b75b1394dbcc4bafc1c6da45, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 40bb7bf9d5084ae4c889cdd2577756b0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 342e816d753b9c4478f408845c17fa92, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 52eb6e976d8cc23479152963fd65104f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 62f1ff3d8b33a414398a8915e49f6af7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 546ea7d6eede800438241027a62cf068, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dbf51665a69b23d46a33313d42d97461, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cb3c43759f6145949b939cc547f8117d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aa25938826595f445becf5f462357979, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 43189ba5220f56448a77b6a5d3086cc6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2248ed06b6a38b846b8e6dca44b7342a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a2bb42c85d71aa40a25246405eceef9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 682dbc214653f5a469b166a94f597c16, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7909ba4fc3382b54a83a897a2ea528b6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dbea9b6ef648d7148b4c694eefc30b5c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 69ac6599d2a7f934c83f8c4a0c0e50eb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bc39abc1dd83dc04989158d109ca0cf3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 10bc108bb3aad584ba9838fc81f829f8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1188118f9b59fc84cb092a5b78acbbbd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2284d92355df2994c8c8855d664967aa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6a29eee0ae135c34fb7a78908a6b3726, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cad0e84760a34ef458fdb1632a2b42be, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 545f570fbc845104ead048d14c28f27b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a53cc5be89bfbf4faaa3f4faa54e7ef, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b57e7a0498c909645bce0237f8380e0f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9b79ea7664e782e45acd79f294d15af7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b7d75c92672008b48b028cc5f892a323, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefabs/In Game.prefab
+Dependencies: []

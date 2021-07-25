@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace Mine
+namespace Helper
 {
     public interface IPooledGameObject
     {

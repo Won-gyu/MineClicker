@@ -11,12 +11,14 @@ namespace Helper
     {
         public string id;
         public string clip;
+        public float volume;
     }
     [Serializable]
     public class AudioDataInfo
     {
         public string id;
         public AudioClip clip;
+        public float volume;
     }
     [Serializable]
     public class SpreadSheetAudioDataInfos
@@ -61,7 +63,8 @@ namespace Helper
                 audioDataInfos.Add(new AudioDataInfo
                 {
                     id = sheetAudioDataInfos.AudioData[i].id,
-                    clip = AssetBundleManager.LoadAssetForEditor<AudioClip>("audio", sheetAudioDataInfos.AudioData[i].clip)
+                    clip = AssetBundleManager.LoadAssetForEditor<AudioClip>("audio", sheetAudioDataInfos.AudioData[i].clip),
+                    volume = sheetAudioDataInfos.AudioData[i].volume
                 });
             }
         }

@@ -1,2 +1,2 @@
-{"AudioData":[{"id":"arrowMetalHit1","clip":"Arrow Hit Metal 1_1"},{"id":"arrowMetalHit2","clip":"Arrow Hit Metal 1_2"},{"id":"arrowMetalHit3","clip":"Arrow Hit Metal 1_3"},{"id":"arrowMetalHit4","clip":"Arrow Hit Metal 1_4"},{"id":"arrowMetalHit5","clip":"Arrow Hit Metal 1_5"}]
+{"AudioData":[{"id":"arrowMetalHit1","clip":"Arrow Hit Metal 1_1","volume":0.1},{"id":"arrowMetalHit2","clip":"Arrow Hit Metal 1_2","volume":0.1},{"id":"arrowMetalHit3","clip":"Arrow Hit Metal 1_3","volume":0.1},{"id":"arrowMetalHit4","clip":"Arrow Hit Metal 1_4","volume":0.1},{"id":"arrowMetalHit5","clip":"Arrow Hit Metal 1_5","volume":0.1}]
 }

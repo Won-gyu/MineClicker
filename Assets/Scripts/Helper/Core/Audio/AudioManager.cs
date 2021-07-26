@@ -22,6 +22,7 @@ namespace Helper
             AudioDataInfo info = Instance.audioDataSO.GetAudioData(id);
             var obj = Instance.pool.GetObject().GetComponent<AudioPlayer>();
             obj.source.clip = info.clip;
+            obj.source.volume = info.volume;
             return obj;
         }
 

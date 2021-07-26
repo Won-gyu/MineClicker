@@ -10,10 +10,10 @@ PrefabInstance:
     - target: {fileID: 3779829590412933972, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 26bd0835670706845ad5e41eed080959, type: 3}
+      objectReference: {fileID: 21300000, guid: ae5dae48f1cf2c444a5746adab867664, type: 3}
     - target: {fileID: 4746404992821608421, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: m_Name
-      value: Mineral Base Variant 02
+      value: Ore 02
       objectReference: {fileID: 0}
     - target: {fileID: 5313658577806261093, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: m_RootOrder

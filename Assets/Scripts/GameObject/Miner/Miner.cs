@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Helper;
 
 namespace Mine
 {
@@ -101,6 +102,7 @@ namespace Mine
         private IEnumerator StateCoroutineDig()
         {
             ChangeBodyState(MinerBodyState.Hit);
+            AudioManager.Play(StaticDataManager.Instance.MineAudioData.GetRandomAudioIdArrowHit());
             yield return new WaitForSecondsRealtime(delayDig);
             ChangeActionState(MinerActionState.Deliver);
         }

@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDataSO: {fileID: 11400000, guid: 2687d7d6418ac8f478f19cbaa4c47ef9, type: 2}
+  mineAudioData: {fileID: 11400000, guid: a4f01940656f6634a8bd638a11687b0f, type: 2}
 --- !u!1001 &66908808107363069
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,8 +15,24 @@ MonoBehaviour:
   shteetTableObjectDirectory: SO
   sheetAudioDataInfos:
     AudioData:
-    - id: arrowHit1
+    - id: arrowMetalHit1
       clip: Arrow Hit Metal 1_1
+    - id: arrowMetalHit2
+      clip: Arrow Hit Metal 1_2
+    - id: arrowMetalHit3
+      clip: Arrow Hit Metal 1_3
+    - id: arrowMetalHit4
+      clip: Arrow Hit Metal 1_4
+    - id: arrowMetalHit5
+      clip: Arrow Hit Metal 1_5
   audioDataInfos:
-  - id: arrowHit1
+  - id: arrowMetalHit1
     clip: {fileID: 8300000, guid: 0555f3f7b12da844aa7fda9cf6964168, type: 3}
+  - id: arrowMetalHit2
+    clip: {fileID: 8300000, guid: b029e27bd353daf459c7b74a8106c6cd, type: 3}
+  - id: arrowMetalHit3
+    clip: {fileID: 8300000, guid: 41b00539b7dc18045bd2bf990f82bfb9, type: 3}
+  - id: arrowMetalHit4
+    clip: {fileID: 8300000, guid: ead78df5a20544c40a70fd3c7c170bfb, type: 3}
+  - id: arrowMetalHit5
+    clip: {fileID: 8300000, guid: 90bf0dfc2d015044fa911da5240851be, type: 3}

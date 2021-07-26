@@ -25,6 +25,11 @@ namespace Helper
             return obj;
         }
 
+        public static void Play(string id)
+        {
+            GetPlayer(id).source.Play();
+        }
+
         [Button]
         private void Test()
         {

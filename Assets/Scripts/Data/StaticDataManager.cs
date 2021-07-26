@@ -9,6 +9,17 @@ namespace Mine
     {
         [SerializeField]
         private GameDataSO gameDataSO;
+
+        [SerializeField]
+        private MineAudioDataSO mineAudioData;
+        public MineAudioDataSO MineAudioData
+        {
+            get
+            {
+                return mineAudioData;
+            }
+        }
+
         private List<SpreadSheetFloorTierDataInfo> FloorTierData
         {
             get

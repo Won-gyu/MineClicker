@@ -34,7 +34,7 @@ namespace Helper
 
         private Dictionary<string, AudioDataInfo> audioDataDict;
 
-        private void Awake()
+        public void Initialize()
         {
             audioDataDict = new Dictionary<string, AudioDataInfo>();
             for (int i = 0; i < audioDataInfos.Count; i++)

@@ -91,6 +91,11 @@ namespace Mine
             }
         }
 
+        public void PlayArrowHitSound()
+        {
+            AudioManager.Play(StaticDataManager.Instance.MineAudioData.GetRandomAudioIdArrowHit());
+        }
+
         // State
         private IEnumerator StateCoroutineFindingMineral()
         {
@@ -102,7 +107,6 @@ namespace Mine
         private IEnumerator StateCoroutineDig()
         {
             ChangeBodyState(MinerBodyState.Hit);
-            AudioManager.Play(StaticDataManager.Instance.MineAudioData.GetRandomAudioIdArrowHit());
             yield return new WaitForSecondsRealtime(delayDig);
             ChangeActionState(MinerActionState.Deliver);
         }

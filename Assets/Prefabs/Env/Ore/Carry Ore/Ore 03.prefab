@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &903832033298557978
+--- !u!1001 &7784495340156745676
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 5669454619618180866, guid: 380c16bf936ff0a4cae3b5cf65683f53, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a6e7ef47030ee9c43a4271753f842118, type: 3}
+      objectReference: {fileID: 21300000, guid: a594f4829c162ac43864fe73a58b85ef, type: 3}
     - target: {fileID: 8070760933963247189, guid: 380c16bf936ff0a4cae3b5cf65683f53, type: 3}
       propertyPath: m_Name
       value: Ore 03

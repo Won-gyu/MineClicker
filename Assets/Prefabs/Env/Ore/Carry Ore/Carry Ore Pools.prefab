@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 5180394288985900382}
   - component: {fileID: 6201619774516759449}
   m_Layer: 0
-  m_Name: Ore 03 Pool
+  m_Name: Ore 02 Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4258807432493375437}
   - component: {fileID: 6163996712993007243}
   m_Layer: 0
-  m_Name: Ore 01 Pool
+  m_Name: Ore 00 Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 7573926587141681251}
   - component: {fileID: 5048904172178670199}
   m_Layer: 0
-  m_Name: Ore 04 Pool
+  m_Name: Ore 03 Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 2677403689989284656}
   - component: {fileID: 123239984699525897}
   m_Layer: 0
-  m_Name: Ore 02 Pool
+  m_Name: Ore 01 Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

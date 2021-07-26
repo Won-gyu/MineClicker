@@ -9,15 +9,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 857365679940540798, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: carryOreIds.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 857365679940540798, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: carryOreIds.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 857365679940540798, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
+      propertyPath: carryOreIds.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 857365679940540798, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
+      propertyPath: carryOreIds.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 857365679940540798, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
+      propertyPath: carryOreIds.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4746404992821608421, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: m_Name
-      value: Ore Base Variant 1
+      value: Ore 00
       objectReference: {fileID: 0}
     - target: {fileID: 5313658577806261093, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: m_RootOrder

@@ -13,7 +13,7 @@ namespace Helper
         public string clip;
     }
     [Serializable]
-    public class AudioDatainfo
+    public class AudioDataInfo
     {
         public string id;
         public AudioClip clip;
@@ -30,7 +30,23 @@ namespace Helper
     {
         public SpreadSheetAudioDataInfos sheetAudioDataInfos;
         [BoxGroup("Interpreted Data")]
-        public List<AudioDatainfo> audioDataInfos;
+        public List<AudioDataInfo> audioDataInfos;
+
+        private Dictionary<string, AudioDataInfo> audioDataDict;
+
+        private void Awake()
+        {
+            audioDataDict = new Dictionary<string, AudioDataInfo>();
+            for (int i = 0; i < audioDataInfos.Count; i++)
+            {
+                audioDataDict.Add(audioDataInfos[i].id, audioDataInfos[i]);
+            }
+        }
+
+        public AudioDataInfo GetAudioData(string id)
+        {
+            return audioDataDict[id];
+        }
 
 #if UNITY_EDITOR
         [Button]
@@ -39,10 +55,10 @@ namespace Helper
             string path = string.Format("{0}/{1}/{2}", Application.dataPath, shteetTableObjectDirectory, "AudioDataSheet.json");
             sheetAudioDataInfos = FileUtils.FromJson<SpreadSheetAudioDataInfos>(path);
 
-            audioDataInfos = new List<AudioDatainfo>();
+            audioDataInfos = new List<AudioDataInfo>();
             for (int i = 0; i < sheetAudioDataInfos.AudioData.Count; i++)
             {
-                audioDataInfos.Add(new AudioDatainfo
+                audioDataInfos.Add(new AudioDataInfo
                 {
                     id = sheetAudioDataInfos.AudioData[i].id,
                     clip = AssetBundleManager.LoadAssetForEditor<AudioClip>("audio", sheetAudioDataInfos.AudioData[i].clip)

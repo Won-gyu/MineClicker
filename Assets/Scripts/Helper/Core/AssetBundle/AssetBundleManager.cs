@@ -8,17 +8,21 @@ using UnityEditor;
 
 namespace Helper
 {
-    public class AssetBundleManager : MonoBehaviour
+    public class AssetBundleManager : MonoSingleton<AssetBundleManager>
     {
         [SerializeField]
         private List<string> assetBundleNames;
 
         private Dictionary<string, AssetBundle> bundleDict;
+        private bool isInitialized;
 
-        private void Awake()
+        public void Initialize()
         {
-            LoadAssetBundles();
-            Instantiate(LoadAsset<GameObject>("common", "In Game"));
+            if (!isInitialized)
+            {
+                isInitialized = true;
+                LoadAssetBundles();
+            }
         }
 
         private void LoadAssetBundles()

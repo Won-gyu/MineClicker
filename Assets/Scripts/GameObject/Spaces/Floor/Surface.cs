@@ -15,14 +15,14 @@ namespace Mine
                 return dropOff;
             }
         }
-        private GoalOnFloor goalDropOff;
-        public GoalOnFloor GoalDropOff
+        private WidePlace goalDropOff;
+        public WidePlace GoalDropOff
         {
             get
             {
                 if (goalDropOff == null)
                 {
-                    goalDropOff = dropOff.GetComponent<GoalOnFloor>();
+                    goalDropOff = dropOff.GetComponent<WidePlace>();
                 }
                 return goalDropOff;
             }

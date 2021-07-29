@@ -29,11 +29,11 @@ namespace Mine
         {
             while (true)
             {
-                Position = traderArea.StartOnFloor.Position;
+                Position = traderArea.Start.Position;
                 yield return StartCoroutine(CoroutineWalkToX(traderArea.DropOff));
                 PickOrePiles();
                 yield return new WaitForSeconds(0.5f);
-                yield return StartCoroutine(CoroutineWalkToX(traderArea.GoalOnFloor));
+                yield return StartCoroutine(CoroutineWalkToX(traderArea.Goal));
                 ChangeOrePilesToCredit();
                 yield return new WaitForSeconds(5f);
             }

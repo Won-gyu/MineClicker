@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6015451078658521143}
-  - component: {fileID: 4037704495143423727}
+  - component: {fileID: 8040688080443847071}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 2931606059575036251}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4037704495143423727
+--- !u!114 &8040688080443847071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,10 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910708429261232041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52eb6e976d8cc23479152963fd65104f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b66d63f6c73f584085453f05d749c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  widthDigable: 0
+  width: 0
 --- !u!1 &4176664807914806073
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699120923618385839}
-  - component: {fileID: 1438170441265628145}
+  - component: {fileID: 1577280452067181016}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -75,7 +75,7 @@ Transform:
   m_Father: {fileID: 2931606059575036251}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1438170441265628145
+--- !u!114 &1577280452067181016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,10 +84,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4176664807914806073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52eb6e976d8cc23479152963fd65104f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b66d63f6c73f584085453f05d749c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  widthDigable: 0
+  width: 0
 --- !u!1 &9217051542694009388
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trader: {fileID: 0}
-  startOnFloor: {fileID: 1438170441265628145}
-  goalOnFloor: {fileID: 4037704495143423727}
+  start: {fileID: 1577280452067181016}
+  goal: {fileID: 8040688080443847071}
   dropOff: {fileID: 0}

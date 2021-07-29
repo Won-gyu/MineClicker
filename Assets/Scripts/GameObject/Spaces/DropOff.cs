@@ -38,7 +38,7 @@ namespace Mine
         [SerializeField]
         private float widthPileRandomPos;
         [SerializeField]
-        private GoalOnFloor goal;
+        private WidePlace goal;
 
 
         private List<PileSet> pileSets;

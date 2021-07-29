@@ -41,7 +41,7 @@ namespace Mine
         [SerializeField]
         private OreHolder oreHolder;
 
-        public GoalOnFloor goal;
+        public WidePlace goal;
         private Coroutine coroutineActionState;
         private bool carry;
 
@@ -100,7 +100,7 @@ namespace Mine
         private IEnumerator StateCoroutineFindingMineral()
         {
             oreAssigned = basementWorkPlace.GetRandomMineral();
-            yield return StartCoroutine(CoroutineWalkTo(oreAssigned.GoalOnFloor));
+            yield return StartCoroutine(CoroutineWalkTo(oreAssigned.WidePlace));
             ChangeActionState(MinerActionState.Dig);
         }
 
@@ -140,7 +140,7 @@ namespace Mine
         }
 
         // Action
-        private IEnumerator CoroutineWalkTo(GoalOnFloor goal)
+        private IEnumerator CoroutineWalkTo(WidePlace goal)
         {
             ChangeBodyState(carry ? MinerBodyState.Carry : MinerBodyState.Walk);
             this.goal = goal;

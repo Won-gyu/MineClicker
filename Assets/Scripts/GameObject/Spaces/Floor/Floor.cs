@@ -17,8 +17,8 @@ namespace Mine
             }
         }
         [SerializeField]
-        protected GoalOnFloor goalElevator;
-        public GoalOnFloor GoalElevator
+        protected WidePlace goalElevator;
+        public WidePlace GoalElevator
         {
             get
             {

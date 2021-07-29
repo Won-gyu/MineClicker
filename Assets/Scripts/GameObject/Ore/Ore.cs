@@ -7,12 +7,12 @@ namespace Mine
     public class Ore : MonoBehaviour
     {
         [SerializeField]
-        private GoalOnFloor goalOnFloor;
-        public GoalOnFloor GoalOnFloor
+        private WidePlace widePlace;
+        public WidePlace WidePlace
         {
             get
             {
-                return goalOnFloor;
+                return widePlace;
             }
         }
 

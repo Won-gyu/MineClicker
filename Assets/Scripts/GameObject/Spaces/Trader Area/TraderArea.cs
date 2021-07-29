@@ -10,26 +10,26 @@ namespace Mine
         private Trader trader;
 
         [SerializeField]
-        private GoalOnFloor startOnFloor;
-        public GoalOnFloor StartOnFloor
+        private WidePlace start;
+        public WidePlace Start
         {
             get
             {
-                return startOnFloor;
+                return start;
             }
         }
         [SerializeField]
-        private GoalOnFloor goalOnFloor;
-        public GoalOnFloor GoalOnFloor
+        private WidePlace goal;
+        public WidePlace Goal
         {
             get
             {
-                return goalOnFloor;
+                return goal;
             }
         }
         [SerializeField]
-        private GoalOnFloor dropOff;
-        public GoalOnFloor DropOff
+        private WidePlace dropOff;
+        public WidePlace DropOff
         {
             get
             {

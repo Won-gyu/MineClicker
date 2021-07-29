@@ -32,9 +32,9 @@ namespace Mine
 
         protected bool flipX;
         
-        protected IEnumerator CoroutineWalkToX(GoalOnFloor goal)
+        protected IEnumerator CoroutineWalkToX(WidePlace goal)
         {
-            Vector2 positionGoal = goal.GetRandomPositionGoal();
+            Vector2 positionGoal = goal.GetRandomPosition();
             Direction = GetDirectionX(positionGoal);
             while (GetDistanceX(positionGoal) > Speed.magnitude)
             {

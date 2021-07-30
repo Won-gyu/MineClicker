@@ -31,6 +31,11 @@ namespace Mine
             }
         }
 
+        public GameObject GetPrefabOre(int oreId)
+        {
+            return oreData.prefabOres[oreId].gameObject;
+        }
+
         private List<int> OrePileRange
         {
             get

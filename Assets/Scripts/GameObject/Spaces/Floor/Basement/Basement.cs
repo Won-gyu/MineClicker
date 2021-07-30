@@ -18,24 +18,23 @@ namespace Mine
             }
         }
         [SerializeField]
-        private GameObject mineralArea;
+        private OreArea oreArea;
+
         [Header("UI")]
         [SerializeField]
         private TextMeshPro textLimitMiner;
 
-        private Ore[] minerals;
         private int countMiner;
 
         private void Awake()
         {
-            minerals = mineralArea.GetComponentsInChildren<Ore>();
             goalElevator.Position = new Vector2(goalElevator.Position.x, spawner.position.y);
             UpdateUI();
         }
 
-        public Ore GetRandomMineral()
+        public Ore GetRandomOre()
         {
-            return minerals[Random.Range(0, minerals.Length)];
+            return oreArea.GetRandomOre();
         }
         
         [Button]

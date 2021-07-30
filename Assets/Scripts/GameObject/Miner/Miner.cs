@@ -7,7 +7,7 @@ namespace Mine
 {
     public enum MinerActionState
     {
-        FindMineral,
+        FindOre,
         Dig,
         Deliver
     }
@@ -53,7 +53,7 @@ namespace Mine
         private void Start()
         {
             body.SetRandomCostume();
-            ChangeActionState(MinerActionState.FindMineral);
+            ChangeActionState(MinerActionState.FindOre);
         }
 
         public void Init(Floor floorWorkPlace)
@@ -79,8 +79,8 @@ namespace Mine
             }
             switch (actionState)
             {
-                case MinerActionState.FindMineral:
-                    coroutineActionState = StartCoroutine(StateCoroutineFindingMineral());
+                case MinerActionState.FindOre:
+                    coroutineActionState = StartCoroutine(StateCoroutineFindingOre());
                     break;
                 case MinerActionState.Dig:
                     coroutineActionState = StartCoroutine(StateCoroutineDig());
@@ -97,9 +97,9 @@ namespace Mine
         }
 
         // State
-        private IEnumerator StateCoroutineFindingMineral()
+        private IEnumerator StateCoroutineFindingOre()
         {
-            oreAssigned = basementWorkPlace.GetRandomMineral();
+            oreAssigned = basementWorkPlace.GetRandomOre();
             yield return StartCoroutine(CoroutineWalkTo(oreAssigned.WidePlace));
             ChangeActionState(MinerActionState.Dig);
         }
@@ -124,7 +124,7 @@ namespace Mine
             yield return StartCoroutine(CoroutineMoveToFloor(basementWorkPlace.FloorLevel));
 
             oreAssigned = null;
-            ChangeActionState(MinerActionState.FindMineral);
+            ChangeActionState(MinerActionState.FindOre);
         }
 
         private void StartCarry()

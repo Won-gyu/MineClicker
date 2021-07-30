@@ -3539,7 +3539,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3cd6d8dd28a71b94aa1ca6eee1dee320, type: 3}
     - target: {fileID: 6996932176523258388, guid: 6cc3df54bfa80e34ea4a16ffb93dac02, type: 3}
       propertyPath: m_Name
-      value: Ore Pile 04 Large
+      value: Ore Pile 03 Large
       objectReference: {fileID: 0}
     - target: {fileID: 7689885306007093124, guid: 6cc3df54bfa80e34ea4a16ffb93dac02, type: 3}
       propertyPath: m_RootOrder
@@ -3584,6 +3584,10 @@ PrefabInstance:
     - target: {fileID: 7689885306007093124, guid: 6cc3df54bfa80e34ea4a16ffb93dac02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312931027587842783, guid: 6cc3df54bfa80e34ea4a16ffb93dac02, type: 3}
+      propertyPath: Pool
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc3df54bfa80e34ea4a16ffb93dac02, type: 3}

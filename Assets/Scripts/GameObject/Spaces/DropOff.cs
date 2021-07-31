@@ -15,6 +15,7 @@ namespace Mine
         Small
     }
 
+    [Serializable]
     public class PileSet
     {
         public int oreId;
@@ -41,7 +42,7 @@ namespace Mine
         private WidePlace goal;
 
 
-        private List<PileSet> pileSets;
+        public List<PileSet> pileSets;
         private List<PileSet> prevPileSets; // for calculation
 
         private void Awake()
@@ -95,7 +96,8 @@ namespace Mine
             bool changeVisuals = false;
             for (int i = 0; i < MAX_VISIBLE_PILES; i++)
             {
-                if (prevPileSets[i].oreId != pileSets[i].oreId || prevPileSets[i].PileSize != pileSets[i].PileSize)
+                if (prevPileSets[i].oreId != pileSets[i].oreId || prevPileSets[i].PileSize != pileSets[i].PileSize ||
+                    (pileSets[i].orePileCount > 0 && pileSets[i].pile == null))
                 {
                     changeVisuals = true;
                     break;
@@ -106,7 +108,6 @@ namespace Mine
             {
                 for (int i = 0; i < pileSets.Count; i++)
                 {
-
                     if (i < MAX_VISIBLE_PILES)
                     {
                         if (pileSets[i].orePileCount > 0)
@@ -130,6 +131,9 @@ namespace Mine
 
         private void CreateOrPile(PileSet pileSet)
         {
+            if (pileSet.PileSize == OrePileSize.Small && pileSet.pile != null)
+                return;
+
             PooledGameObject pile = OreManager.Instance.CreateOrePile(pileSet.oreId, pileSet.PileSize);
             pile.transform.SetParent(pileArea.transform, false);
             if (pileSet.PileSize == OrePileSize.Small)

@@ -304,14 +304,6 @@ PrefabInstance:
       propertyPath: prefab
       value: 
       objectReference: {fileID: 1872057321452948867, guid: d89b9650b8a390d4db20ce7893c1d66a, type: 3}
-    - target: {fileID: 6297992281865921784, guid: 4cf800ba877b68645893370660e2af21, type: 3}
-      propertyPath: groups.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6297992281865921784, guid: 4cf800ba877b68645893370660e2af21, type: 3}
-      propertyPath: groups.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7340185328785614953, guid: 4cf800ba877b68645893370660e2af21, type: 3}
       propertyPath: prefab
       value: 

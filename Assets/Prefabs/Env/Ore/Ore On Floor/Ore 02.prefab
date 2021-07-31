@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 857365679940540798, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
+      propertyPath: oreId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 857365679940540798, guid: 9e303d2aec28f3d41b5b20d53a4751ac, type: 3}
       propertyPath: carryOreIds.Array.size
       value: 1
       objectReference: {fileID: 0}

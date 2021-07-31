@@ -356,6 +356,10 @@ PrefabInstance:
       propertyPath: prefab
       value: 
       objectReference: {fileID: 1046961762959682031, guid: c75d29818539ff74c8dbdbc580860777, type: 3}
+    - target: {fileID: 8264714487058663868, guid: 4cf800ba877b68645893370660e2af21, type: 3}
+      propertyPath: m_Name
+      value: Carry Ore Groups
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cf800ba877b68645893370660e2af21, type: 3}
 --- !u!4 &5516188679958415188 stripped

@@ -19,8 +19,6 @@ namespace Mine
         }
 
         [SerializeField]
-        private List<int> carryOreIds;
-        [SerializeField]
         private int oreId;
         public int OreId
         {
@@ -37,9 +35,5 @@ namespace Mine
             PrefabUtility.RecordPrefabInstancePropertyModifications(this);
         }
 #endif
-        public int GetRandomCarryOreId()
-        {
-            return carryOreIds[Random.Range(0, carryOreIds.Count)];
-        }
     }
 }

@@ -25,7 +25,7 @@ namespace Mine
         {
             if (objCarryOre == null)
             {
-                objCarryOre = CarryOrePools.Instance.GetPoolObject(ore.GetRandomCarryOreId());
+                objCarryOre = CarryOrePoolGroups.Instance.GetCarryOreObject(ore.OreId);
                 objCarryOre.transform.SetParent(transform, false);
                 carryOre = objCarryOre.GetComponent<CarryOre>();
                 carryOre.Init(ore.OreId);

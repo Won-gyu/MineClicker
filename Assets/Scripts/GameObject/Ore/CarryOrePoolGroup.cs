@@ -5,20 +5,20 @@ using Helper;
 
 namespace Mine
 {
-    public class CarryOrePools : MonoSingleton<CarryOrePools>
+    public class CarryOrePoolGroup : MonoBehaviour
     {
         [SerializeField]
         private List<GameObjectPool> pools;
 
-        public PooledGameObject GetPoolObject(int carryOreId)
+        public PooledGameObject GetPoolObject(int groupIndex)
         {
-            if (carryOreId > pools.Count)
+            if (groupIndex > pools.Count)
             {
                 Debug.LogError("pools are set wrong");
                 return null;
             }
 
-            return pools[carryOreId].GetObject().GetComponent<PooledGameObject>();
+            return pools[groupIndex].GetObject().GetComponent<PooledGameObject>();
         }
     }
 }

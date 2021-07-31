@@ -93,8 +93,7 @@ namespace Mine
             currentFloor = floor;
             for (int i = 0; i < minersOn[floor].Count; i++)
             {
-                GetOff(minersOn[floor][i]);
-                // Debug.Log("Miner get off the elevator on " + floor);
+                GetOff(minersOn[floor][i], floor);
             }
             minersOn[floor].Clear();
 
@@ -110,9 +109,7 @@ namespace Mine
                 {
                     i++;
                 }
-                // Debug.Log("Miner get on the elevator on " + floor);
             }
-            // elevatorArea.GetWaitInfos(floor).Clear();
         }
 
         private void GetOn(ElevatorWaitInfo waitInfo)
@@ -126,10 +123,11 @@ namespace Mine
             waitInfo.minerWaiting.transform.parent = minerArea;
         }
 
-        public void GetOff(Miner miner)
+        public void GetOff(Miner miner, int floor)
         {
             miner.OnArriveAtGoalFloor();
             miner.transform.parent = MinerManager.Instance.transform;
+            miner.Position = new Vector2(miner.Position.x, elevatorArea.GetEntrance(floor).Position.y);
         }
 
         [Button]

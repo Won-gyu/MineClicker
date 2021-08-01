@@ -8,6 +8,16 @@ namespace Helper
     {
 	    private Canvas canvas;
 
+	    public virtual void Open()
+	    {
+	        PopupManager.Instance.Open(this);
+	    }
+
+	    public virtual void Close()
+	    {
+	        PopupManager.Instance.Close(this);
+	    }
+
 	    public void UpdateSortingLayer(int sortingOrder)
 	    {
 	        if (canvas == null)

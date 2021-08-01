@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using Sirenix.OdinInspector;
-using UnityEditor;
 #endif
 
 namespace Helper
@@ -151,25 +150,12 @@ namespace Helper
         //     }
         // }
 
-// #if UNITY_EDITOR
-//         public List<string> popupList;
-
-//         [Button]
-//         public void OpenAllPopups()
-//         {
-//             var popupCanvas = GameObject.Find("Popup Canvas");
-
-//             foreach(var popupName in popupList)
-//             {
-//                 var bundleName = "common";
-//                 var prefab = (GameObject)AssetBundleManager.LoadAsset<GameObject>(bundleName, popupName);
-
-//                 GameObject go = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
-//                 go.transform.SetParent(popupCanvas.transform, false);
-//                 go.transform.SetAsLastSibling();
-//                 go.SetActive(true);
-//             }
-//         }
-// #endif
+#if UNITY_EDITOR
+        [Button]
+        public void OpenTestPopup()
+        {
+            PopupOpener.Instance.OpenPopup("Popup Dummy");
+        }
+#endif
     }
 }

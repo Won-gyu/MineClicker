@@ -66,13 +66,11 @@ namespace Mine
                 {
                     yield return StartCoroutine(CoroutineMoveTo(elevatorArea.EntranceFloorLevels[i]));
                     Direction = Vector2.zero;
-                    yield return new WaitForSeconds(0.2f);
                 }
                 for (int i = elevatorArea.EntranceFloorLevels.Count - 1; i >= 0; i--)
                 {
                     yield return StartCoroutine(CoroutineMoveTo(elevatorArea.EntranceFloorLevels[i]));
                     Direction = Vector2.zero;
-                    yield return new WaitForSeconds(0.2f);
                 }
             }
         }
@@ -81,35 +79,45 @@ namespace Mine
         private IEnumerator CoroutineMoveTo(int floorLevelGoal)
         {
             bool isElevatorGoingUp = floorLevelGoal < currentFloor;
-            ArriveOnFloor(currentFloor, isElevatorGoingUp);
+            // ArriveOnFloor(currentFloor, isElevatorGoingUp);
             GameObject2D goal = elevatorArea.GetEntrance(floorLevelGoal);
             yield return StartCoroutine(CoroutineWalkToY(goal));
             Position = goal.Position;
-            ArriveOnFloor(floorLevelGoal, isElevatorGoingUp);
+            // if (!elevatorArea.IsWaitInfosEmpty(floorLevelGoal, isElevatorGoingUp))
+    
+            bool anyMinerGetOnOrOff = ArriveOnFloor(floorLevelGoal, isElevatorGoingUp);
+            if (anyMinerGetOnOrOff)
+            {
+                yield return new WaitForSeconds(0.2f);
+            }
         }
 
-        public void ArriveOnFloor(int floor, bool isElevatorGoingUp)
+        public bool ArriveOnFloor(int floorLevel, bool isElevatorGoingUp)
         {
-            currentFloor = floor;
-            for (int i = 0; i < minersOn[floor].Count; i++)
+            bool anyMinerGetOnOrOff = false;
+            currentFloor = floorLevel;
+            for (int i = 0; i < minersOn[floorLevel].Count; i++)
             {
-                GetOff(minersOn[floor][i], floor);
+                GetOff(minersOn[floorLevel][i], floorLevel);
+                anyMinerGetOnOrOff = true;
             }
-            minersOn[floor].Clear();
+            minersOn[floorLevel].Clear();
 
-            for (int i = 0; i < elevatorArea.GetWaitInfos(floor).Count;)
+            for (int i = 0; i < elevatorArea.GetWaitInfos(floorLevel).Count;)
             {
-                bool isMinerGoingUp = elevatorArea.GetWaitInfos(floor)[i].goal < floor;
-                if (isMinerGoingUp == isElevatorGoingUp)
+                bool isMinerGoingUp = elevatorArea.GetWaitInfos(floorLevel)[i].goal < floorLevel;
+                if (isMinerGoingUp == isElevatorGoingUp || elevatorArea.IsLastFloor(floorLevel))
                 {
-                    GetOn(elevatorArea.GetWaitInfos(floor)[i]);
-                    elevatorArea.GetWaitInfos(floor).RemoveAt(i);
+                    GetOn(elevatorArea.GetWaitInfos(floorLevel)[i]);
+                    elevatorArea.GetWaitInfos(floorLevel).RemoveAt(i);
+                    anyMinerGetOnOrOff = true;
                 }
                 else
                 {
                     i++;
                 }
             }
+            return anyMinerGetOnOrOff;
         }
 
         private void GetOn(ElevatorWaitInfo waitInfo)

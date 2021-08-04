@@ -74,6 +74,39 @@ namespace Mine
             return waitingInfosDict[floorLevel];
         }
 
+        public bool IsLastFloor(int floorLevel)
+        {
+            return entranceFloorLevels[0] == floorLevel || entranceFloorLevels[entranceFloorLevels.Count - 1] == floorLevel;
+        }
+
+        // public bool IsWaitInfosEmpty(int floorLevel, bool isElevatorGoingUp)
+        // {
+        //     List<ElevatorWaitInfo> waitInfos = waitingInfosDict[floorLevel];
+        //     // if (waitInfos.Count > 0)
+        //     //     Debug.Log("@@@ TEST " + waitInfos.Count + " " + waitInfos[0].goal + " " + isElevatorGoingUp);
+        //     if (isElevatorGoingUp)
+        //     {
+        //         for (int i = 0; i < waitInfos.Count; i++)
+        //         {
+        //             if (waitInfos[i].goal < floorLevel)
+        //             {
+        //                 return false;
+        //             }
+        //         }
+        //     }
+        //     else
+        //     {
+        //         for (int i = 0; i < waitInfos.Count; i++)
+        //         {
+        //             if (waitInfos[i].goal > floorLevel)
+        //             {
+        //                 return false;
+        //             }
+        //         }
+        //     }
+        //     return true;
+        // }
+
         public void AddMinerWaiting(Miner miner, int floorLevelWaiting, int floorLevelGoal)
         {
             List<ElevatorWaitInfo> waitInfos;

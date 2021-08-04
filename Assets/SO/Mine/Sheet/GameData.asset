@@ -30,3 +30,14 @@ MonoBehaviour:
     - tier: 5
       limitCount: 25
       requiredCredit: 500
+    FloorLevelData:
+    - oreId: -1
+    - oreId: 0
+    - oreId: 0
+    - oreId: 0
+    - oreId: 1
+    - oreId: 1
+    - oreId: 1
+    - oreId: 2
+    - oreId: 2
+    - oreId: 2

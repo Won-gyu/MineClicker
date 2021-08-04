@@ -16,4 +16,10 @@ namespace Mine
         public int limitCount;
         public double requiredCredit;
     }
+
+    [Serializable]
+    public class SpreadSheetFloorLevelDataInfo
+    {
+        public int oreId;
+    }
 }

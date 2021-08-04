@@ -20,3 +20,6 @@ MonoBehaviour:
   - tableName: FloorTierData
     queryType: 3
     parent: {fileID: 11400000}
+  - tableName: FloorLevelData
+    queryType: 3
+    parent: {fileID: 11400000}

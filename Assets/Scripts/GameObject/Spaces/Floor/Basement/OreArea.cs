@@ -7,16 +7,15 @@ namespace Mine
     public class OreArea : MonoBehaviour
     {
         public const int MAX_ORE = 3;
-
-        [SerializeField]
         private int oreId;
         [SerializeField]
         private WidePlace width;
 
         private List<Ore> ores;
 
-        private void Awake()
+        public void Init(int oreId)
         {
+            this.oreId = oreId;
             ores = new List<Ore>();
             for (int i = 0; i < MAX_ORE; i++)
             {

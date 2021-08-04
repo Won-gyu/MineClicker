@@ -29,6 +29,7 @@ namespace Mine
         private void Awake()
         {
             goalElevator.Position = new Vector2(goalElevator.Position.x, spawner.position.y);
+            oreArea.Init(StaticDataManager.Instance.GetFloorLevelData(FloorLevel).oreId);
             UpdateUI();
         }
 

@@ -12,6 +12,7 @@ namespace Mine
     public class SpreadSheetGameDataInfos
     {
         public List<SpreadSheetFloorTierDataInfo> FloorTierData;
+        public List<SpreadSheetFloorLevelDataInfo> FloorLevelData;
     }
 #if UNITY_5_3_OR_NEWER
     [CreateAssetMenu(fileName = "GameData", menuName = "Mine/ScriptableObject/GameData", order = 0)]

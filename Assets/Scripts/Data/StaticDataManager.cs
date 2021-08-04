@@ -32,5 +32,18 @@ namespace Mine
         {
             return FloorTierData[tier - 1];
         }
+
+        private List<SpreadSheetFloorLevelDataInfo> FloorLevelData
+        {
+            get
+            {
+                return gameDataSO.sheetGameDataInfos.FloorLevelData;
+            }
+        }
+
+        public SpreadSheetFloorLevelDataInfo GetFloorLevelData(int floorLevel)
+        {
+            return FloorLevelData[floorLevel];
+        }
     }
 }

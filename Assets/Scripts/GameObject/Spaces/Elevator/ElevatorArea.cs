@@ -13,7 +13,7 @@ namespace Mine
     public class ElevatorArea : GameObject2D
     {
         [SerializeField]
-        private Elevator elevator;
+        private List<Elevator> elevators;
 
         [BoxGroup("entrance")]
         [SerializeField]
@@ -48,7 +48,11 @@ namespace Mine
                 go.Position = new Vector2(go.Position.x, SpaceManager.Instance.GetFloor(entranceFloorLevels[i]).GoalElevator.Position.y);
                 waitingInfosDict.Add(entranceFloorLevels[i], new List<ElevatorWaitInfo>());
             }
-            elevator.Init(this, 0);
+
+            for (int i = 0; i < elevators.Count; i++)
+            {
+                elevators[i].Init(this, i);
+            }
         }
 
         private GameObject CreateEntrance()

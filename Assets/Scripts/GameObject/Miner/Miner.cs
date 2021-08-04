@@ -107,7 +107,7 @@ namespace Mine
         private IEnumerator StateCoroutineDig()
         {
             ChangeBodyState(MinerBodyState.Hit);
-            yield return new WaitForSecondsRealtime(delayDig);
+            yield return new WaitForSeconds(delayDig);
             ChangeActionState(MinerActionState.Deliver);
         }
 

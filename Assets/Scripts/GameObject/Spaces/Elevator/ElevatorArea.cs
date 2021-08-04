@@ -17,7 +17,7 @@ namespace Mine
 
         [BoxGroup("entrance")]
         [SerializeField]
-        private List<GameObject2D> entrances;
+        private Transform entranceArea;
         [BoxGroup("entrance")]
         [SerializeField]
         private List<int> entranceFloorLevels;
@@ -43,14 +43,22 @@ namespace Mine
         {
             for (int i = 0; i < entranceFloorLevels.Count; i++)
             {
-                entrancesDict.Add(entranceFloorLevels[i], entrances[i]);
-                entrances[i].Position = new Vector2(entrances[i].Position.x, SpaceManager.Instance.GetFloor(i).GoalElevator.Position.y);
+                GameObject2D go = CreateEntrance().GetComponent<GameObject2D>();
+                entrancesDict.Add(entranceFloorLevels[i], go);
+                go.Position = new Vector2(go.Position.x, SpaceManager.Instance.GetFloor(entranceFloorLevels[i]).GoalElevator.Position.y);
                 waitingInfosDict.Add(entranceFloorLevels[i], new List<ElevatorWaitInfo>());
             }
             elevator.Init(this, 0);
         }
 
-        
+        private GameObject CreateEntrance()
+        {
+            GameObject prefab = AppAssetBundleUtils.LoadCommonAsset<GameObject>("Elevator Entrance");
+            var go = Instantiate(prefab) as GameObject;
+            go.name = prefab.name;
+            go.transform.SetParent(entranceArea, false);
+            return go;
+        }
 
         public GameObject2D GetEntrance(int floorLevel)
         {

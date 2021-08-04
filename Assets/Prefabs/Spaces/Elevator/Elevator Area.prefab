@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elevator: {fileID: 2918743634085972434}
-  entrances: []
-  entranceFloorLevels: 
+  entranceArea: {fileID: 0}
+  entranceFloorLevels: 00000000
 --- !u!1001 &5137777922449975245
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 81330347791566513}
   - component: {fileID: 1685040659024705207}
   m_Layer: 0
-  m_Name: Entrance 0
+  m_Name: Elevator Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
